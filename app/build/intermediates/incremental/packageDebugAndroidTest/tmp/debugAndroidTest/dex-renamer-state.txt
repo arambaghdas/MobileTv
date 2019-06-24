@@ -1,0 +1,4 @@
+#Mon Jun 24 22:15:40 AMT 2019
+base.0=C\:\\Users\\ARAM\\Desktop\\MobileTv\\app\\build\\intermediates\\transforms\\dexMerger\\androidTest\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

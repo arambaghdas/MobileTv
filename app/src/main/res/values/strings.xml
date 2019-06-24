@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MobileTv</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Log In</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email_validation_error">Please enter a valid e-mail address</string>
+    <string name="password_validation_error">Please enter a characters with a mix of uppercase and lowercase letters, numbers and symbols.</string>
+    <string name="wrong_email">Wrong e-mail</string>
+    <string name="wrong_password">Wrong password</string>
+</resources>
