@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.pttracker">
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+
+    <application
+        android:name=".app.PTTrackerApp"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/NonSwipable"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".views.screens.activities.SplashActivity"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            android:theme="@style/SwipeAppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".views.screens.activities.HomeActivity"
+            android:alwaysRetainTaskState="true"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance"
+            android:theme="@style/SwipeAppTheme">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".views.screens.activities.ResultActivity"
+            android:label="Results"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            android:theme="@style/NonSwipable">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".views.screens.activities.GetReadyActivity"
+            android:label="Get Ready"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            android:theme="@style/NonSwipable">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".views.screens.activities.RestActivity"
+            android:label="Rest"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            android:theme="@style/NonSwipable">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".views.screens.activities.DashboardActivity"
+            android:theme="@style/NonSwipable">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <service
+            android:name=".services.PhoneMessagesListenerService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.MESSAGE_RECEIVED" />
+                <action android:name="com.google.android.gms.wearable.CAPABILITY_CHANGED" />
+
+                <data
+                    android:host="*"
+                    android:pathPrefix="/RoutineDataRequest1"
+                    android:scheme="wear" />
+                <data
+                    android:host="*"
+                    android:pathPrefix="/RoutineDataUpdate1"
+                    android:scheme="wear" />
+                <data
+                    android:host="*"
+                    android:pathPrefix="/UserInfoRequest1"
+                    android:scheme="wear" />
+                <data
+                    android:host="*"
+                    android:pathPrefix="/LoggedOutUpdate1"
+                    android:scheme="wear" />
+                <data
+                    android:host="*"
+                    android:pathPrefix="/LogInUpdate1"
+                    android:scheme="wear" />
+                <data
+                    android:host="*"
+                    android:pathPrefix="/RoutineDataPartialUpdate"
+                    android:scheme="wear" />
+                <data
+                    android:host="*"
+                    android:pathPrefix="/ExercisesImagesRequest"
+                    android:scheme="wear" />
+                <data
+                    android:host="*"
+                    android:pathPrefix="/ExercisesImagesPartialUpdate"
+                    android:scheme="wear" />
+                <data
+                    android:host="*"
+                    android:pathPrefix="/TrainingLogDataUpdate"
+                    android:scheme="wear" />
+                <data
+                    android:host="*"
+                    android:pathPrefix="/TrainingLogPartialUpdate"
+                    android:scheme="wear" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".services.HeartbeatService" />
+    </application>
+
+
+</manifest>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="320dp"
+    android:layout_centerInParent="true">
+
+    <TextView
+        android:id="@+id/title_plan_no_plan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mavenprobold"
+        android:padding="10dp"
+        android:text="Your Current Plan:"
+        android:textAllCaps="true"
+        android:textColor="@color/grey_txt"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:id="@+id/logo_image_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/title_plan_no_plan"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/appicon" />
+
+    <FrameLayout
+        android:id="@+id/attention_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/title_plan_no_plan"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@id/logo_image_view"
+        android:background="@drawable/button_style"
+        android:backgroundTint="@android:color/holo_red_dark">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_announcement"
+        />
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/no_plan_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/attention_image"
+        android:fontFamily="@font/mavenprobold"
+        android:textColor="@color/greyblack_text"
+        android:textAllCaps="true"
+        android:text="@string/no_plan_message_string"
+        android:padding="20dp" />
+
+</RelativeLayout>

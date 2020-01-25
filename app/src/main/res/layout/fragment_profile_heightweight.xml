@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:fillViewport="true"
+    android:nestedScrollingEnabled="true"
+    tools:context=".views.activities.LoginActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/background_blue"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/AppTheme.ThemeOverflow">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mavenproblack"
+                android:text="@string/txt_profile_setup"
+                android:textColor="@color/grey_text"
+                android:textSize="@dimen/txt_title"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/dummyText1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/toolbar"
+            android:gravity="center"
+            android:background="@drawable/top_panel"
+            android:text="@string/txt_questionaire_dummytext1"
+            android:textColor="@color/grey_text"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:id="@+id/layoutDummy2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dummyText1"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dummyText2"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:text="@string/txt_questionaire_dummytext5"
+                android:textColor="@color/grey_text"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:padding="5dp"
+                android:tint="@color/grey_text"
+                android:scaleType="centerInside"
+                android:src="@drawable/weight_profile" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/heightLayout1"
+            android:layout_below="@id/layoutDummy2"
+            android:orientation="horizontal"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_weight_kg"
+                android:layout_marginTop="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="40dp"
+                android:background="@drawable/height_weight_et_drawable"
+                android:layout_below="@id/layoutDummy2"
+                android:theme="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/et_weight_kg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Weight"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:background="@color/transparent"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/grey_text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Spinner
+                android:id="@+id/spinnerWeight"
+                android:layout_toRightOf="@id/til_weight_kg"
+                android:layout_below="@id/layoutDummy2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:background="@drawable/height_weight_et_drawable"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="40dp">
+
+
+
+            </Spinner>
+
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:id="@+id/layoutDummy3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/heightLayout1"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dummyText3"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:text="@string/txt_questionaire_dummytext6"
+                android:textColor="@color/grey_text"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:padding="5dp"
+                android:tint="@color/grey_text"
+                android:scaleType="centerInside"
+                android:src="@drawable/height_profile" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/heightLayout2"
+            android:layout_below="@id/layoutDummy3"
+            android:orientation="horizontal"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_height_cm"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="40dp"
+                android:layout_below="@id/layoutDummy3"
+                android:background="@drawable/height_weight_et_drawable"
+                android:layout_marginTop="10dp"
+                android:theme="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/et_height_cm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="Height"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/grey_text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_inches_ft"
+                android:layout_width="0dp"
+                android:layout_weight="1.4"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:visibility="gone"
+                android:background="@drawable/height_weight_et_drawable"
+                android:layout_marginTop="10dp"
+                android:theme="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/et_inches_ft"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="0"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="@color/background_blue"
+                    android:textColorHint="@color/background_blue" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/spinnerHeight"
+                android:layout_toRightOf="@id/til_inches_ft"
+                android:layout_below="@id/layoutDummy3"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:background="@drawable/height_weight_et_drawable"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp">
+
+
+
+            </Spinner>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dummyText4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/heightLayout2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textColor="@color/light_grey"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btn_Next"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/green"
+            android:text="Next"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </RelativeLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:padding="10dp"
+    android:backgroundTint="@color/white"
+    android:background="@drawable/custom_button2"
+    android:layout_height="200dp">
+
+    <TextView
+        android:id="@+id/circuit_view_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/promptbold"
+        android:layout_marginTop="10dp"
+        android:text="No time for a workout today ?"
+        android:textAllCaps="true"
+        android:textColor="@color/grey"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_workout_card"
+        android:layout_width="150dp"
+        android:layout_marginStart="20dp"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/tv_circuit_card_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:maxWidth="150dp"
+        android:maxLines="2"
+        android:textColor="@color/greyblack_text"
+        android:fontFamily="@font/mavenprobold"
+        android:text="Pep Cardio"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/rl_start_btn"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        android:text="Start"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/circuit_view_title"
+        android:drawableBottom="@drawable/circuits_active_gray"
+        android:layout_toEndOf="@id/rl_workout_card"
+        android:paddingBottom="10dp"
+        android:background="@drawable/custom_button">
+
+
+    </Button>
+
+
+</RelativeLayout>

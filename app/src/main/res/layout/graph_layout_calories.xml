@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/frameLayout"
+    android:layout_width="60dp"
+    android:layout_gravity="bottom"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/verline"
+        android:layout_width="3px"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/gray_graph"
+        android:rotation="180" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/day"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="right|bottom"
+            android:text="12"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/month"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:text="SEP"
+            android:textColor="@color/gray_graph"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="50dp"
+            android:id="@+id/greenTable"
+            android:visibility="invisible"
+            android:layout_height="80dp"
+            android:background="@drawable/board_graph_yellow" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:id="@+id/dummyGreenTable"
+            android:layout_height="80dp"
+            android:background="@color/transparent" />
+
+        <TextView
+            android:id="@+id/dayWeight"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:text="20"
+            android:textColor="@color/gray_graph" />
+
+        <TextView
+            android:id="@+id/dayDiffWeight"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:text="+ 2.0"
+            android:textColor="@android:color/white" />
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/dotClick"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="61dp"
+        android:background="@drawable/circle_graph" />
+
+
+
+
+
+</FrameLayout>

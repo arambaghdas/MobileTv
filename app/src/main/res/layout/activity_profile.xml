@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/homeLayout"
+    android:padding="5dp"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/background">
+
+    <ScrollView
+        android:layout_above="@id/updatePass"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:background="@drawable/top_panel"
+                android:layout_width="wrap_content"
+                android:id="@+id/imageLayoutMain"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_marginTop="50dp"
+                    android:id="@+id/imageLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="20dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_picture"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/avatar"
+                        app:civ_border_color="#2B989898"
+                        app:civ_border_width="2.5dp" />
+
+
+                    <Button
+                        android:id="@+id/changeImage"
+                        android:layout_width="40dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="45dp"
+                        android:background="@drawable/change_pic"
+                        android:backgroundTint="@color/activegreen"
+                        android:drawableEnd="@drawable/photo_camera"
+                        android:paddingEnd="8dp" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/profile_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageLayout"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/mavenprobold"
+                    android:text="Name Surname"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/profile_birthday"
+                    android:layout_below="@id/profile_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:fontFamily="@font/mavenprobold"
+                    android:text="21 Apr 1980"
+                    android:textColor="@color/grey_text"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="80dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_below="@+id/imageLayoutMain"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iconPhone"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/phone" />
+
+                <LinearLayout
+                    android:id="@+id/phoneLayout"
+                    android:layout_toRightOf="@id/iconPhone"
+                    android:orientation="vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mavenprobold"
+                        android:gravity="start"
+                        android:text="Phone"
+                        android:textColor="@color/grey_text"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/profile_phnumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mavenprobold"
+                        android:textColor="@color/white"
+                        android:text="1234"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/iconHeight"
+                    android:layout_width="50dp"
+                    android:layout_below="@id/phoneLayout"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/height" />
+
+                <LinearLayout
+                    android:id="@+id/heightLayout"
+                    android:layout_toRightOf="@id/iconHeight"
+                    android:orientation="vertical"
+                    android:layout_below="@id/phoneLayout"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mavenprobold"
+                        android:gravity="start"
+                        android:text="Height"
+                        android:textColor="@color/grey_text"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/profile_height"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mavenprobold"
+                        android:textColor="@color/white"
+                        android:text="175 cm"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/iconWeight"
+                    android:layout_width="50dp"
+                    android:layout_below="@id/iconHeight"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/weight" />
+
+                <LinearLayout
+                    android:id="@+id/weightLayout"
+                    android:layout_toRightOf="@id/iconWeight"
+                    android:orientation="vertical"
+                    android:layout_below="@id/heightLayout"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mavenprobold"
+                        android:gravity="start"
+                        android:text="Weight"
+                        android:textColor="@color/grey_text"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/profile_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mavenprobold"
+                        android:textColor="@color/white"
+                        android:text="80 Kg"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/mem_stat_btn"
+                    android:layout_width="50dp"
+                    android:layout_below="@id/iconWeight"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/watchprofile" />
+
+                <LinearLayout
+                    android:id="@+id/codeLayout"
+                    android:layout_toRightOf="@id/mem_stat_btn"
+                    android:orientation="vertical"
+                    android:layout_below="@id/weightLayout"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mavenprobold"
+                        android:text="APITRAIN Smart Watch PIN Code"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/pinCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mavenprobold"
+                        android:text="1234"
+                        android:textColor="@color/activegreen"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/updatePass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/card_background"
+        android:backgroundTint="@color/activegreen"
+        android:text="udpate password"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:textAllCaps="true"/>
+
+
+</RelativeLayout>

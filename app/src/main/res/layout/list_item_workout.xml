@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_main"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/custom_button2">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:fontFamily="@font/mavenprobold"
+            android:maxLines="2"
+            android:maxWidth="170dp"
+            android:text="XTrainer"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/tv_name"
+            android:layout_below="@id/tv_name"
+            android:fontFamily="@font/mavenprobold"
+            android:text="Duration : "
+            android:textColor="@color/activegreen"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_number_workouts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/tv_name"
+            android:layout_below="@id/tv_duration"
+            android:fontFamily="@font/mavenprobold"
+            android:text=""
+            android:textColor="@color/activegreen"
+            android:textSize="15sp" />
+
+
+        <ImageView
+            android:id="@+id/next_btn"
+            android:layout_width="10dp"
+            android:layout_height="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/ic_left_bracket" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_date"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/custom_button"
+        android:padding="0dp">
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/mavenprobold"
+            android:text="12"/>
+
+        <TextView
+            android:id="@+id/tv_date_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_date"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/mavenprobold"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:text="APR"/>
+
+    </RelativeLayout>
+</RelativeLayout>

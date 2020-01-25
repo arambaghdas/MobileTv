@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:padding="10dp"
+    android:background="@drawable/custom_button2"
+    android:backgroundTint="@color/white"
+    android:layout_height="200dp">
+
+    <TextView
+        android:id="@+id/workout_view_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:fontFamily="@font/promptbold"
+        android:text="your next workout is:"
+        android:textAllCaps="true"
+        android:textColor="@color/grey"/>
+
+    <RelativeLayout
+
+        android:id="@+id/rl_workout_card"
+        android:layout_width="200dp"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/workout_image"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:background="@drawable/workouts_active"/>
+
+        <TextView
+            android:id="@+id/tv_workout_card_name"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/workout_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:maxWidth="150dp"
+            android:textColor="@color/greyblack_text"
+            android:fontFamily="@font/mavenprobold"
+            android:text="XTrainer"/>
+
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl_count_btn"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:clickable="true"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/rl_workout_card"
+        android:background="@drawable/custom_button"
+        android:padding="0dp">
+
+        <TextView
+            android:id="@+id/wtv_day_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/mavenprobold"
+            android:text="12"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/wtv_month_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/wtv_day_count"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/mavenprobold"
+            android:text="Apr"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

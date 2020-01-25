@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/background">
+
+  <RelativeLayout
+      android:id="@+id/topPanel"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@drawable/top_panel"
+      android:paddingLeft="20dp"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:paddingBottom="30dp">
+
+    <ImageView
+        android:id="@+id/dummyLogo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/icon_white" />
+
+    <TextView
+        android:text="Forget your notepad and let technology do the work for you!"
+        android:textSize="17sp"
+        android:layout_below="@id/dummyLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/mavenprobold"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+  </RelativeLayout>
+
+  <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:src="@drawable/tutorial2"
+      android:layout_below="@id/topPanel"
+      android:orientation="vertical"
+      android:layout_marginTop="30dp"
+      android:layout_marginLeft="30dp"
+      android:layout_marginRight="30dp"
+      android:layout_marginBottom="30dp"
+      android:alpha="0.2"
+      android:scaleType="fitXY"
+      />
+
+
+  <LinearLayout
+      android:id="@+id/details"
+      android:layout_below="@id/topPanel"
+      android:orientation="vertical"
+      android:layout_marginTop="20dp"
+      android:layout_marginLeft="30dp"
+      android:layout_marginRight="30dp"
+      android:layout_marginBottom="30dp"
+      android:paddingBottom="0dp"
+      android:background="@drawable/tutorial_drawable"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+      <ImageView
+          android:src="@drawable/workout"
+          android:scaleType="fitCenter"
+          android:layout_width="50dp"
+          android:layout_height="50dp" />
+
+      <me.grantland.widget.AutofitTextView
+          android:text="Workout guidance (pictures, reps, weight, rest times…)"
+          android:textSize="16sp"
+          app:minTextSize="14sp"
+          android:paddingLeft="10dp"
+          android:textColor="@color/white"
+          android:fontFamily="@font/mavenprobold"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+      <ImageView
+          android:src="@drawable/kcal"
+          android:scaleType="fitCenter"
+          android:layout_width="50dp"
+          android:layout_height="50dp" />
+
+      <TextView
+          android:text="Calories burnt"
+          android:textSize="16sp"
+          android:paddingLeft="10dp"
+          android:textColor="@color/white"
+          android:fontFamily="@font/mavenprobold"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+      <ImageView
+          android:src="@drawable/foodremeinder"
+          android:scaleType="fitCenter"
+          android:layout_width="50dp"
+          android:layout_height="50dp" />
+
+      <TextView
+          android:text="Food Reminders"
+          android:textSize="16sp"
+          android:paddingLeft="10dp"
+          android:textColor="@color/white"
+          android:fontFamily="@font/mavenprobold"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+      android:layout_height="match_parent">
+
+        <ImageView
+            android:src="@drawable/heartrate"
+            android:scaleType="fitCenter"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:text="Heart rate monitoring"
+            android:textSize="16sp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/mavenprobold"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+  </LinearLayout>
+
+
+  </LinearLayout>
+
+
+  <Button
+      android:id="@+id/createaccount"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/details"
+      android:visibility="gone"
+      android:layout_marginTop="30dp"
+      android:layout_marginLeft="30dp"
+      android:layout_marginRight="30dp"
+      android:layout_centerHorizontal="true"
+      android:background="@drawable/button_style"
+      android:fontFamily="@font/mavenproblack"
+      android:textSize="20dp"
+      android:text="@string/create_account"
+      android:textColor="@color/white" />
+
+</RelativeLayout>

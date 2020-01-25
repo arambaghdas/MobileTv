@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_search"
+        android:orderInCategory="1"
+        android:title="Search"
+        android:icon="@drawable/ic_search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always|collapseActionView" />
+
+    <group android:id="@+id/parrent1">
+
+        <group android:id="@+id/firstGroup">
+
+            <item
+                android:id="@+id/action_add"
+                android:icon="@drawable/ic_add_circle_outline"
+                android:orderInCategory="1"
+                android:title="add"
+                app:showAsAction="always" />
+
+            <item
+                android:id="@+id/action_add_client"
+                android:icon="@drawable/ic_person_add_white_24dp"
+                android:orderInCategory="1"
+                android:title="add"
+                app:showAsAction="always" />
+
+            <item
+                android:id="@+id/action_rateus"
+                android:orderInCategory="1"
+                android:title="@string/action_rateus"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_about"
+                android:orderInCategory="1"
+                android:title="@string/action_about"
+                app:showAsAction="never" />
+
+        </group>
+
+    </group>
+
+    <group android:id="@+id/parent2">
+
+        <group android:id="@+id/logoutGroup">
+            <item
+                android:id="@+id/action_logout"
+                android:icon="@drawable/ic_logout"
+                android:orderInCategory="1"
+                android:title="@string/action_logout"
+                app:showAsAction="never" />
+        </group>
+
+    </group>
+</menu>

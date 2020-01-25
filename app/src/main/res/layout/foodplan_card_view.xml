@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@color/transparent"
+    >
+<RelativeLayout
+    android:id="@+id/rl_food_plan"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_centerHorizontal="true">
+
+    <ImageView
+        android:id="@+id/food_plan_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerInside"
+        android:layout_toRightOf="@id/food_plan_name"
+        android:layout_marginStart="20dp"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/kcal"/>
+    <TextView
+        android:id="@+id/food_plan_name"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:maxLines="3"
+        android:layout_centerVertical="true"
+        android:textColor="@color/white"
+        android:fontFamily="@font/mavenproblack"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/food_plan_calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:fontFamily="@font/mavenproblack"
+        android:layout_centerVertical="true"
+        android:textSize="30sp"
+        android:layout_toEndOf="@id/food_plan_icon"/>
+
+</RelativeLayout>
+    </RelativeLayout>

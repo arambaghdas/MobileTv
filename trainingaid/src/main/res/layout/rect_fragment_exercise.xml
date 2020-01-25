@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wearable.view.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_exercise_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/error_image" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_blue"
+            android:alpha="0.8"/>
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/tv_exercise_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:text="Crunches"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/tv_sets_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="50dp"
+            android:text="Reps: 12"
+            android:textStyle="bold"
+            android:textColor="@color/activegreen"
+            android:textSize="24sp" />
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/tv_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="50dp"
+            android:text="Weight: -"
+            android:textStyle="bold"
+            android:textColor="@color/activegreen"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="60dp">
+
+            <ImageView
+                android:id="@+id/iv_heart"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_heart" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tv_heart_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="-"
+                android:textStyle="bold"
+                android:textColor="@color/red"
+                android:textSize="60sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.wearable.view.BoxInsetLayout>

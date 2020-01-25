@@ -1,0 +1,30 @@
+package com.pttrackershared.utils;
+
+import com.pttrackershared.models.eventbus.User;
+
+/**
+ * Constants holds all the constant values of entire app.
+ */
+
+public class Constants {
+    public static final String DATABASE_NAME = "PTTrackerdb";
+    public static final int WEIGHT_UNIT_KILOGRAMS = 0;
+    public static final int WEIGHT_UNIT_POUNDS = 1;
+
+    public static final int LANGUAGE_ENGLISH = 0;
+    public static final int LANGUAGE_SPANISH = 1;
+
+    public static final String RELEASE_DATE = "12/10/2017";
+    public static final String YOUTUBE_API_KEY = "AIzaSyAbqK-Fvz6p_w0uacwdfF1MHZFZw6GeVY4";
+//    public static final boolean IS_MOCK_ENVIRONMENT = true;
+    public static final int SORTING_PARAMETER_NAME = 0;
+    public static final int SORTING_PARAMETER_CATEGORY = 1;
+    public static final String DATE_FORMAT = "yyyy-MM-dd";
+    public static final String BASE_URL = "http://www.pttracker.co.uk/api10/web/index.php/";
+//    public static final String BASE_URL = "http://192.168.1.102:8080/projects/ptrack/Server/basic/web/";
+    public static final String IMAGE_URL_FOOD = "http://www.pttracker.co.uk/api8/web/uploads/food/";
+    public static final String IMAGE_URL = "http://www.pttracker.co.uk/api8/web/users_pictures/";
+    public static final String IMAGE_URL_MALE = "http://www.pttracker.co.uk/api8/web/uploads/exercises/male/";
+    public static final String IMAGE_URL_FEMALE = "http://www.pttracker.co.uk/api8/web/uploads/exercises/female/";
+    public static User user = null;
+}

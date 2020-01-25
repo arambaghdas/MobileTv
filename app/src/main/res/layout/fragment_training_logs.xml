@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swiperefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+    
+    <RelativeLayout
+        android:id="@+id/days_trained_graph"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:layout_height="200dp">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DAYS TRAINED"
+            android:textSize="20sp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/promptbold"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/days_trained_graph"
+        android:visibility="visible"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_training_logs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:scrollbars="none"
+            android:nestedScrollingEnabled="true"
+            android:descendantFocusability="blocksDescendants"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:drawableTop="@drawable/dumbbell"
+        android:drawablePadding="10dp"
+        android:text="No training logs found"
+        android:textAllCaps="true"
+        android:fontFamily="@font/mavenproblack"
+        android:textColor="@color/light_grey"
+        android:visibility="visible" />
+</RelativeLayout>

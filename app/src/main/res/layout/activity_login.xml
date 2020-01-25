@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background6"
+    android:fitsSystemWindows="true"
+    tools:context=".views.activities.LoginActivity">
+
+    <TextView
+        android:id="@+id/welcome_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/mavenproblack"
+        android:text="@string/welcome"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/login_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="80dp"
+        android:layout_toRightOf="@id/welcome_txt"
+        android:background="@drawable/icon_white" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcome_txt"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="30dp"
+        style="@style/TextLabel"
+        app:hintTextAppearance="@style/TextLabelother"
+        android:layout_marginRight="30dp"
+        android:paddingBottom="20dp">
+
+        <EditText
+            android:id="@+id/enter_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/email"
+            android:textColorHint="@color/grey_text"
+            android:inputType="textWebEmailAddress"
+            android:textColor="@color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/til_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/til_email"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        style="@style/TextLabel"
+        app:hintTextAppearance="@style/TextLabelother"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:paddingBottom="20dp"
+        >
+
+        <EditText
+            android:id="@+id/enter_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:textColorHint="@color/grey_text"
+            android:inputType="textWebPassword"
+            android:textColor="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/check_term"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/til_password"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:buttonTint="@color/green_grapgh"
+        android:fontFamily="@font/mavenproblack"
+        android:text="I agree with "
+        android:textColor="@color/white"
+        android:theme="@style/checkboxTheme" />
+
+    <TextView
+        android:id="@+id/txt_term"
+        android:layout_width="wrap_content"
+        android:layout_toEndOf="@+id/check_term"
+        android:layout_alignBaseline="@+id/check_term"
+        android:text="@string/terms_and_conditions"
+        android:textColor="@color/white"
+        android:fontFamily="@font/mavenproblack"
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:id="@+id/show_char"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/til_password"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="55dp"
+        android:buttonTint="@color/green_grapgh"
+        android:fontFamily="@font/mavenproblack"
+        android:text="Show Characters"
+        android:textColor="@color/white"
+        android:theme="@style/checkboxTheme" />
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/til_password"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginRight="30dp"
+        android:layout_toRightOf="@id/show_char"
+        android:background="@drawable/button_style"
+        android:fontFamily="@font/mavenproblack"
+        android:text="@string/log_in"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/web_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/mavenproblack"
+        android:text="@string/www_apitrain_co_uk"
+        android:textColor="@color/activegreen"
+        android:textSize="20sp" />
+
+</RelativeLayout>
+
+</ScrollView>

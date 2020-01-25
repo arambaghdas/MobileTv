@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_main"
+        android:layout_width="320dp"
+        android:layout_height="225dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_button2">
+
+        <TextView
+            android:id="@+id/tv_workout_name"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="60dp"
+            android:maxLines="4"
+            android:fontFamily="@font/mavenprobold"
+            android:textSize="20sp"
+            android:textColor="@color/lighter_blue"
+            android:text="PEP CARDIO"/>
+
+        <View
+            android:id="@+id/star1"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/tv_workout_name"
+            android:layout_alignStart="@id/tv_workout_name"
+            android:background="@drawable/star_active"/>
+
+        <View
+            android:id="@+id/star2"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_below="@id/tv_workout_name"
+            android:layout_toEndOf="@id/star1"
+            android:background="@drawable/star_active"/>
+
+        <View
+            android:id="@+id/star3"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_below="@id/tv_workout_name"
+            android:layout_toEndOf="@id/star2"
+            android:background="@drawable/star_active"/>
+
+        <View
+            android:id="@+id/star4"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_below="@id/tv_workout_name"
+            android:layout_toEndOf="@id/star3"
+            android:background="@drawable/star_active"/>
+
+        <View
+            android:id="@+id/star5"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_below="@id/tv_workout_name"
+            android:layout_toEndOf="@id/star4"
+            android:background="@drawable/star_active"/>
+
+        <TextView
+            android:id="@+id/tv_workout_durationtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/tv_avg_bpm"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/mavenprobold"
+            android:textColor="@color/grey_text"
+            android:textSize="12sp"
+            android:text="WORKOUT DURATION"/>
+
+        <TextView
+            android:id="@+id/tv_time_complete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_workout_durationtv"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/mavenprobold"
+            android:textColor="@color/lighter_blue"
+            android:textSize="36sp"
+            android:text="00:01:13"/>
+
+        <TextView
+            android:id="@+id/bpm_mintv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/mavenprobold"
+            android:textColor="@color/grey_text"
+            android:textSize="12sp"
+            android:text="BPM MIN"/>
+
+        <TextView
+            android:id="@+id/tv_min_bpm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@id/bpm_mintv"
+            android:layout_below="@id/bpm_mintv"
+            android:fontFamily="@font/mavenprobold"
+            android:textColor="@color/lighter_blue"
+            android:textSize="24sp"
+            android:text="60"/>
+
+        <TextView
+            android:id="@+id/bpm_maxtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_min_bpm"
+            android:layout_marginTop="5dp"
+            android:layout_alignStart="@id/bpm_mintv"
+            android:fontFamily="@font/mavenprobold"
+            android:textColor="@color/grey_text"
+            android:textSize="12sp"
+            android:text="BPM MAX"/>
+
+        <TextView
+            android:id="@+id/tv_max_bpm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@id/bpm_maxtv"
+            android:layout_below="@id/bpm_maxtv"
+            android:fontFamily="@font/mavenprobold"
+            android:textColor="@color/lighter_blue"
+            android:textSize="24sp"
+            android:text="160"/>
+
+        <TextView
+            android:id="@+id/bpm_avgtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_max_bpm"
+            android:layout_marginTop="5dp"
+            android:layout_alignStart="@id/bpm_mintv"
+            android:fontFamily="@font/mavenprobold"
+            android:textColor="@color/grey_text"
+            android:textSize="12sp"
+            android:text="BPM AVG"/>
+
+        <TextView
+            android:id="@+id/tv_avg_bpm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@id/bpm_avgtv"
+            android:layout_below="@id/bpm_avgtv"
+            android:fontFamily="@font/mavenprobold"
+            android:textColor="@color/lighter_blue"
+            android:textSize="24sp"
+            android:text="90"/>
+
+        <TextView
+            android:id="@+id/caloriestv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_avg_bpm"
+            android:layout_marginTop="10dp"
+            android:layout_alignStart="@id/bpm_mintv"
+            android:fontFamily="@font/mavenprobold"
+            android:textColor="@color/grey_text"
+            android:textSize="12sp"
+            android:text="CALORIES"/>
+
+        <TextView
+            android:id="@+id/tv_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@id/bpm_avgtv"
+            android:layout_below="@id/caloriestv"
+            android:fontFamily="@font/mavenprobold"
+            android:textColor="@color/lighter_blue"
+            android:textSize="24sp"
+            android:text="463"/>
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="0.3dp"
+        android:layout_height="800dp"
+        android:layout_alignTop="@id/rl_main"
+        android:layout_alignBottom="@id/rl_main"
+        android:layout_alignEnd="@id/rl_main"
+        android:layout_marginEnd="90dp"
+        android:background="@color/grey_text"/>
+
+    <View
+        android:layout_width="90dp"
+        android:layout_height="0.3dp"
+        android:layout_alignEnd="@id/rl_main"
+        android:layout_alignBottom="@id/rl_main"
+        android:layout_marginBottom="55dp"
+        android:background="@color/grey_text"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_date"
+        android:layout_width="55dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:padding="0dp"
+        android:background="@drawable/custom_button">
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/mavenprobold"
+            android:text="12"/>
+
+        <TextView
+            android:id="@+id/tv_date_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_date"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/mavenprobold"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:text="APR"/>
+    </RelativeLayout>
+
+</RelativeLayout>

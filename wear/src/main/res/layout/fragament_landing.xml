@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This is the view of landing fragment of wear-->
+<android.support.wearable.view.WatchViewStub xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/watch_view_stub"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:rectLayout="@layout/rect_fragment_landing"
+    app:roundLayout="@layout/round_fragment_landing"
+    android:background="@drawable/bg_landing_screen"
+    android:keepScreenOn="true">
+
+</android.support.wearable.view.WatchViewStub>

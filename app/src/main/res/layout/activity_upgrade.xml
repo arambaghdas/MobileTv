@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background8"
+    tools:context=".views.activities.UpgradeActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/lay1"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/backButton"
+                    android:src="@drawable/ic_custom_back"
+                    android:scaleType="centerInside"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/mavenprobold"
+                    android:text="UPGRADE OPTIONS"
+                    android:gravity="center"
+                    android:textColor="@color/appbar"
+                    android:layout_height="match_parent" />
+
+
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/dividerHomeScreen"
+                android:background="@color/grey_text"
+                android:layout_width="match_parent"
+                android:layout_below="@id/lay1"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="80dp"
+                android:background="@drawable/custom_button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:padding="5dp"
+                        android:textColor="@color/grey_text"
+                        android:text="Joining Date"
+                        android:fontFamily="@font/mavenproregular"
+                        android:gravity="center_vertical"
+                        android:layout_height="30dp" />
+
+                    <TextView
+                        android:id="@+id/joiningDateValue"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        android:textColor="@color/background_blue"
+                        android:text="04.03.2018."
+                        android:fontFamily="@font/mavenprobold"
+                        android:gravity="center_vertical|right"
+                        android:layout_height="30dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:padding="5dp"
+                        android:textColor="@color/grey_text"
+                        android:text="Referral Code"
+                        android:fontFamily="@font/mavenproregular"
+                        android:gravity="center_vertical"
+                        android:layout_height="30dp" />
+
+                    <TextView
+                        android:id="@+id/referralCodeValue"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        android:textColor="@color/background_blue"
+                        android:text="DNH5BV"
+                        android:fontFamily="@font/mavenprobold"
+                        android:gravity="center_vertical|right"
+                        android:layout_height="30dp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:height="40dp"
+                        android:padding="5dp"
+                        android:textColor="@color/grey_text"
+                        android:text="Trial Period"
+                        android:fontFamily="@font/mavenproregular"
+                        android:gravity="center_vertical"
+                        android:layout_height="30dp" />
+
+                    <TextView
+                        android:id="@+id/trialPeriodValue"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:height="40dp"
+                        android:padding="5dp"
+                        android:textColor="@color/background_blue"
+                        android:text="2 Days"
+                        android:fontFamily="@font/mavenprobold"
+                        android:gravity="center_vertical|right"
+                        android:layout_height="30dp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:height="40dp"
+                        android:padding="5dp"
+                        android:textColor="@color/grey_text"
+                        android:text="Smartwatch Login PIN"
+                        android:fontFamily="@font/mavenproregular"
+                        android:gravity="center_vertical"
+                        android:layout_height="30dp" />
+
+                    <TextView
+                        android:id="@+id/smartWatchPinValue"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:height="40dp"
+                        android:padding="5dp"
+                        android:textColor="@color/background_blue"
+                        android:text="2002"
+                        android:fontFamily="@font/mavenprobold"
+                        android:gravity="center_vertical|right"
+                        android:layout_height="30dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/appbar"/>
+
+                <TextView
+                    android:id="@+id/currentMembership"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/mavenprobold"
+                    android:gravity="center"
+                    android:text="MEMBERSHIP"
+                    android:textColor="@color/background_blue" />
+
+                <ImageView
+                    android:id="@+id/membershipBadge"
+                    android:layout_width="100dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/apitraintrial"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:text="Start Date:"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:fontFamily="@font/mavenproregular"
+                            android:textColor="@color/grey_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp" />
+
+                        <TextView
+                            android:id="@+id/startDateValue"
+                            android:text="02.06.2018."
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:fontFamily="@font/mavenprobold"
+                            android:textColor="@color/background_blue"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:text="End Date:"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:fontFamily="@font/mavenproregular"
+                            android:textColor="@color/grey_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp" />
+
+                        <TextView
+                            android:id="@+id/endDateValue"
+                            android:text="02.09.2018."
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:fontFamily="@font/mavenprobold"
+                            android:textColor="@color/background_blue"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/appbar"/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:text="UPGRADE OPTIONS"
+                    android:gravity="center"
+                    android:fontFamily="@font/mavenproregular"
+                    android:textColor="@color/grey_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        android:fontFamily="@font/mavenprobold"
+                        android:gravity="center_vertical"
+                        android:text="Apitrain Lite"
+                        android:textColor="@color/background_blue" />
+
+                    <TextView
+                        android:textColor="@color/background_blue"
+                        android:text="$"
+                        android:fontFamily="@font/mavenprobold"
+                        android:gravity="center_vertical|right"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.2"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:id="@+id/price1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:fontFamily="@font/mavenprobold"
+                        android:gravity="center_vertical|left"
+                        android:text="2.99"
+                        android:textColor="@color/background_blue" />
+
+                    <Spinner
+                        android:id="@+id/spinner1"
+                        android:textColor="@color/background_blue"
+                        android:text="Apitrain Lite"
+                        android:backgroundTint="@color/grey"
+                        android:fontFamily="@font/mavenprobold"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.9"
+                        android:layout_height="match_parent" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox1"
+                        android:textColor="@color/background_blue"
+                        android:fontFamily="@font/mavenprobold"
+                        android:layout_width="0dp"
+                        android:buttonTint="@color/green_grapgh"
+                        android:layout_weight="0.2"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textColor="@color/background_blue"
+                        android:text="Apitrain Pro"
+                        android:gravity="center_vertical"
+                        android:fontFamily="@font/mavenprobold"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:textColor="@color/background_blue"
+                        android:text="$"
+                        android:fontFamily="@font/mavenprobold"
+                        android:gravity="center_vertical|right"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.2"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:id="@+id/price2"
+                        android:textColor="@color/background_blue"
+                        android:text="2.99"
+                        android:gravity="center_vertical|left"
+                        android:fontFamily="@font/mavenprobold"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="match_parent" />
+
+                    <Spinner
+                        android:id="@+id/spinner2"
+                        android:textColor="@color/background_blue"
+                        android:text="Apitrain Lite"
+                        android:backgroundTint="@color/grey"
+                        android:fontFamily="@font/mavenprobold"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.9"
+                        android:layout_height="match_parent" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox2"
+                        android:textColor="@color/background_blue"
+                        android:fontFamily="@font/mavenprobold"
+                        android:layout_width="0dp"
+                        android:buttonTint="@color/green_grapgh"
+                        android:layout_weight="0.2"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_upgrade"
+                    android:background="@color/green"
+                    android:text="Upgrade"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/white"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,38 @@
+<android.support.wearable.view.SwipeDismissFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sdfl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.pttrackershared.views.widgets.SwipeableViewPager
+        android:id="@+id/vp_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:src="@mipmap/ic_back"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_width="50dp"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center|top"
+        android:gravity="center"
+        android:text="WORKOUT RESULTS"
+        android:textColor="@color/grey_text"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/dividerHomeScreen"
+        android:background="@color/grey_text"
+        android:layout_width="match_parent"
+        android:layout_marginTop="76dp"
+        android:layout_height="1dp"/>
+
+</android.support.wearable.view.SwipeDismissFrameLayout>

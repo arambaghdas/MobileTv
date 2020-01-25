@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="match_parent"
+    android:background="@color/dark_blue"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imageCategoryGraph"
+        android:contentDescription=""
+        android:layout_marginTop="10dp"
+        android:scaleType="centerInside"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/calories"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+
+    <TextView
+        android:id="@+id/trainingName"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/grey_text"
+        android:layout_toRightOf="@id/imageCategoryGraph"
+        android:textAllCaps="true"
+        android:textSize="12sp"
+        android:gravity="center_vertical"
+        android:text="Calories progress"
+        android:fontFamily="@font/mavenprobold"
+        android:paddingLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <HorizontalScrollView
+        android:orientation="vertical"
+        android:id="@+id/scrollView"
+        android:scrollIndicators="none"
+        android:layout_below="@id/trainingName"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="190dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/mainLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:minWidth="150dp"
+                android:minHeight="150dp" >
+
+                <train.apitrainclient.views.custom.DrawViewYellow
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:id="@+id/graphContainer2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:orientation="horizontal" />
+
+                <LinearLayout
+                    android:paddingTop="5dp"
+                    android:id="@+id/graphContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/restDaysLayout"
+                android:orientation="horizontal"
+                android:gravity="bottom"
+                android:minHeight="150dp"
+                android:paddingTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+    <LinearLayout
+    android:id="@+id/infoLayout"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_below="@id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+
+    <TextView
+    android:id="@+id/avgCal"
+    android:layout_width="match_parent"
+    android:layout_weight="1"
+    android:text="AVERAGE CALORIES"
+    android:fontFamily="@font/mavenproblack"
+    android:textColor="@android:color/white"
+    android:gravity="center"
+    android:textSize="20sp"
+    android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</RelativeLayout>

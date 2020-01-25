@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_progress"
+            android:checked="true"
+            android:icon="@mipmap/progress_menu"
+            android:visible="true"
+            android:title="@string/txt_progress" />
+        <item
+            android:id="@+id/nav_training_logs"
+            android:icon="@mipmap/logs_menu"
+            android:visible="true"
+            android:title="@string/txt_training_logs" />
+
+<!--        <item-->
+<!--            android:id="@+id/nav_ftiness_plan"-->
+<!--            android:title="@string/action_fitness_plan"-->
+<!--            android:visible="true"-->
+<!--            android:icon="@mipmap/goal" />-->
+
+        <!--<item-->
+            <!--android:id="@+id/nav_exercises"-->
+            <!--android:icon="@drawable/exercises_active"-->
+            <!--android:visible="true"-->
+            <!--android:title="@string/txt_exercises" />-->
+        <!--<item-->
+            <!--android:id="@+id/nav_circuits"-->
+            <!--android:visible="true"-->
+            <!--android:icon="@drawable/circuits_active"-->
+            <!--android:title="@string/txt_circuits" />-->
+        <!--<item-->
+            <!--android:id="@+id/nav_workouts"-->
+            <!--android:visible="true"-->
+            <!--android:icon="@drawable/workouts_active"-->
+            <!--android:title="@string/txt_workouts" />-->
+
+        <item
+            android:id="@+id/nav_training_plan"
+            android:title="@string/txt_training_plan"
+            android:visible="true"
+            android:icon="@mipmap/training_menu" />
+
+        <item
+            android:id="@+id/nav_foodplan_list"
+            android:title="@string/txt_food_list"
+            android:visible="true"
+            android:icon="@mipmap/food_menu" />
+
+        <item
+            android:id="@+id/nav_help_feedback"
+            android:title="@string/action_help_feedback"
+            android:visible="true"
+            android:icon="@mipmap/help_menu" />
+
+        <!--<item-->
+            <!--android:id="@+id/nav_training_aid"-->
+            <!--android:title="@string/txt_training_aid"-->
+            <!--android:visible="true"-->
+            <!--android:icon="@drawable/ic_training_aid_30dp" />-->
+
+    </group>
+</menu>

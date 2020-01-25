@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wearable.view.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:orientation="horizontal"
+         android:padding="20dp"
+         android:gravity="center"
+         android:background="@drawable/background6"
+         android:layout_height="0dp"
+         android:layout_weight="1">
+
+         <RelativeLayout
+             android:layout_width="0dp"
+             android:layout_marginTop="20dp"
+             android:layout_height="match_parent"
+             android:layout_weight="1.7">
+
+             <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                 android:id="@+id/circularprogress"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 app:cpb_background_progressbar_width="7dp"
+                 app:cpb_progressbar_color="@color/activegreen"
+                 app:cpb_background_progressbar_color="@color/grey_text"/>
+
+             <me.grantland.widget.AutofitTextView
+                 android:id="@+id/tv_go"
+                 android:layout_width="100dp"
+                 android:layout_height="100dp"
+                 android:layout_centerInParent="true"
+                 android:text="GO!"
+                 android:gravity="top|center"
+                 android:textColor="@color/white"
+                 android:textSize="50sp"
+                 android:textStyle="bold"
+                 android:visibility="gone" />
+
+             <me.grantland.widget.AutofitTextView
+                 android:id="@+id/tvstartsin"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerHorizontal="true"
+                 android:layout_marginTop="50dp"
+                 android:text="Starts In"
+                 android:textColor="@color/white"
+                 android:textSize="24sp"
+                 android:textStyle="bold" />
+
+             <me.grantland.widget.AutofitTextView
+                 android:id="@+id/tv_count_down"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/tvstartsin"
+                 android:layout_centerHorizontal="true"
+                 android:text="10"
+                 android:textColor="@color/activegreen"
+                 android:textSize="28sp"
+                 android:textStyle="bold" />
+
+             <LinearLayout
+                 android:id="@+id/heartRateLayout"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerHorizontal="true"
+                 android:layout_below="@id/tv_count_down"
+                 android:layout_marginTop="10dp"
+                 android:orientation="horizontal">
+
+                 <ImageView
+                     android:id="@+id/iv_heart"
+                     android:layout_width="50dp"
+                     android:layout_height="50dp"
+                     android:src="@drawable/ic_heart" />
+
+                 <me.grantland.widget.AutofitTextView
+                     android:id="@+id/tv_heart_rate"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_alignParentBottom="true"
+                     android:layout_centerInParent="true"
+                     android:layout_marginBottom="30dp"
+                     android:layout_marginStart="5dp"
+                     android:text="-"
+                     android:textStyle="bold"
+                     android:textColor="@color/red"
+                     android:textSize="24sp" />
+
+             </LinearLayout>
+
+         </RelativeLayout>
+
+         <RelativeLayout
+             android:id="@+id/relativeLayoutCancel"
+             android:layout_width="0dp"
+             android:layout_marginTop="20dp"
+             android:gravity="center"
+             android:layout_height="match_parent"
+             android:layout_weight="1">
+
+             <ImageView
+                 android:id="@+id/iv_cancel"
+                 android:layout_width="35dp"
+                 android:layout_height="35dp"
+                 android:layout_centerHorizontal="true"
+                 android:src="@drawable/ic_cross" />
+
+             <me.grantland.widget.AutofitTextView
+                 android:id="@+id/tv_cancel"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="10dp"
+                 android:layout_below="@id/iv_cancel"
+                 android:layout_centerHorizontal="true"
+                 android:text="CANCEL"
+                 android:textColor="@color/white"
+                 android:textSize="18sp"
+                 android:textStyle="bold" />
+
+
+         </RelativeLayout>
+
+
+
+
+         <!--<com.mikhaellopez.circularprogressbar.CircularProgressBar-->
+             <!--android:id="@+id/circularprogress"-->
+             <!--android:layout_width="match_parent"-->
+             <!--android:layout_height="match_parent"-->
+             <!--android:layout_margin="10dp"-->
+             <!--app:cpb_background_progressbar_width="7dp"-->
+             <!--app:cpb_progressbar_color="@color/activegreen"-->
+             <!--app:cpb_background_progressbar_color="@color/grey_text"/>-->
+
+
+     </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_exercise_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/error_image" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tv_exercise_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="EXERCISE NAME"
+                android:textColor="@color/background_blue"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tv_category_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_exercise_name"
+                android:layout_marginLeft="10dp"
+                android:text="EXERCISE NAME"
+                android:textColor="@color/grey_txt"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tv_sets_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/tv_exercise_name"
+                android:text="Reps: 12"
+                android:textColor="@color/activegreen"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tv_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_sets_count"
+                android:layout_marginTop="10dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:text="Weight: -"
+                android:textAlignment="center"
+                android:textColor="@color/activegreen"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</android.support.wearable.view.BoxInsetLayout>

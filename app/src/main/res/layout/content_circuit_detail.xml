@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".views.activities.CircuitDetailActivity"
+    tools:showIn="@layout/activity_circuit_detail">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/rl_toppart"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/mavenprobold"
+                    android:text="PEPSTRENGHT"
+                    android:textColor="@color/lighter_blue"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/tv_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/tv_name"
+                    android:drawableStart="@drawable/ic_watch"
+                    android:layout_below="@id/tv_name"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/mavenproregular"
+                    android:text="10:10" />
+
+                <TextView
+                    android:id="@+id/tv_exercises"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_name"
+                    android:layout_toEndOf="@id/tv_duration"
+                    android:layout_marginBottom="20dp"
+                    android:drawableStart="@drawable/exercises_active"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/mavenpromedium"
+                    android:text="16"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/activegreen"
+                    />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/startCircuit"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentEnd="true"
+                android:text="Start"
+                android:textAllCaps="false"
+                android:drawableBottom="@drawable/bitmap7"
+                android:textColor="@color/white"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical"
+                android:background="@drawable/custom_button"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_listpart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/startCircuit">
+
+                <LinearLayout
+                    android:id="@+id/listparttop"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:orientation="horizontal"
+                    android:background="@color/grey_text">
+
+                    <TextView
+                        android:id="@+id/exercise_name"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.4"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/mavenprobold"
+                        android:text="@string/txt_exercises_name_caps"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/repstimecalls"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_toEndOf="@id/exercise_name"
+                        android:fontFamily="@font/mavenprobold"
+                        android:text="@string/txt_reps_time_calls_caps"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_weight_label_unit"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_toEndOf="@id/repstimecalls"
+                        android:fontFamily="@font/mavenprobold"
+                        android:text="@string/txt_weightkg_caps"
+                        android:textColor="@color/white"
+                        android:textAllCaps="true"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/resttv"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_toEndOf="@id/tv_weight_label_unit"
+                        android:fontFamily="@font/mavenprobold"
+                        android:text="@string/txt_rest_caps"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_exercises"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/listparttop"
+                    android:background="@color/white" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

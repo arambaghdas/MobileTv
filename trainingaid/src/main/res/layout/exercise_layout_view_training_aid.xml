@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/exerciseLayout"
+    android:orientation="horizontal"
+    android:layout_height="50dp">
+
+    <TextView
+        android:id="@+id/exerciseName"
+        android:layout_width="0dp"
+        android:textStyle="bold"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:textColor="@color/background_blue"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/exercisesSet"
+        android:layout_width="0dp"
+        android:textStyle="bold"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:textColor="@color/grey_txt"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/exerciseReps"
+        android:layout_width="0dp"
+        android:textStyle="bold"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:textColor="@color/grey_txt"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/exerciseWeight"
+        android:layout_width="0dp"
+        android:textStyle="bold"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:textColor="@color/grey_txt"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/exerciseRest"
+        android:layout_width="0dp"
+        android:textStyle="bold"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:textColor="@color/grey_txt"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/gray</color>
+    <color name="colorPrimaryDark">#1c06c7</color>
+    <color name="colorAccent">#4DB6AC</color>
+    <color name="theme_blue">#009688</color>
+    <color name="blue_dark">#00695C</color>
+    <color name="white">#ffffff</color>
+    <color name="green">#63c90b</color>
+    <color name="black">#000000</color>
+    <color name="hint_color">#f4f4f4</color>
+    <color name="grey_txt">#afabab</color>
+    <color name="gray">#2e2d2d</color>
+    <color name="somecolor">#93D051</color>
+    <color name="default_toolbar">#303F9F</color>
+    <color name="light_grey">#bdbdbd</color>
+    <color name="blue_bright">#0500ab</color>
+    <color name="red">#FF5252</color>
+    <color name="theme_red">#c83538</color>
+    <color name="dark_grey">#424242</color>
+    <color name="bpmColor">#ff0000</color>
+
+    <color name="dark_blue">#142840</color>
+    <color name="greyblack_text">#4e6376</color>
+    <color name="lighter_blue">#234568</color>
+    <color name="grey_text">#91a1b1</color>
+    <color name="activegreen">#6dda95</color>
+    <color name="inactive">#91a1b1</color>
+    <color name="lightgreen">#34d275</color>
+    <color name="pickergrey">#9b9b9b</color>
+    <color name="blue_graph">#243f5c</color>
+    <color name="blue_graph_dark">#142840</color>
+    <color name="green_grapgh">#65d78f</color>
+    <color name="gray_graph">#596476</color>
+    <color name="red_graph">#C12236</color>
+    <color name="red_graph_bottom">#1C2031</color>
+    <color name="transparent">#001c2031</color>
+
+    <color name="teal_500">#009687</color>
+    <color name="blue_grey_500">#607d8b</color>
+    <color name="blue_grey_700">#455a64</color>
+    <color name="indigo_500">#3f51b5</color>
+    <color name="indigo_700">#303f9f</color>
+    <color name="pink_200">#ff4081</color>
+    <color name="grey">#E2E2E2</color>
+
+    <color name="background_blue">#314f6b</color>
+    <color name="blue_grey_100">#e7f4fa</color>
+
+    <color name="dark_red">#D32F2F</color>
+    <color name="grey_txt_transparent">#39AFABAB</color>
+    <color name="top_panel_color">#BF1E367C</color>
+
+</resources>

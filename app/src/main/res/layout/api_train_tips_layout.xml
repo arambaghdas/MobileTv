@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginTop="30dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+   <LinearLayout
+       android:id="@+id/tips_title"
+       android:orientation="horizontal"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
+       <ImageView
+           android:layout_width="30dp"
+           android:layout_height="30dp"
+           android:layout_marginTop="20dp"
+           android:layout_marginLeft="10dp"
+           android:background="@drawable/ic_tips"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Apitrain Tips"
+           android:textColor="@color/grey"
+           android:textSize="20dp"
+           android:textAllCaps="true"
+           android:layout_marginTop="20dp"
+           android:layout_marginLeft="10dp"
+           android:fontFamily="@font/mavenprobold"
+           />
+   </LinearLayout>
+    <FrameLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/first_tip"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_txt"
+            android:fontFamily="@font/mavenprobold"
+            android:textSize="15sp"
+            android:text="1) Remember to update your\n weight using the top bar"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_add_circle_outline"
+            android:layout_gravity="end"
+            android:layout_marginRight="20dp"/>
+    </FrameLayout>
+    <FrameLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/second_tip"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_txt"
+            android:textSize="15sp"
+            android:fontFamily="@font/mavenprobold"
+            android:text="2) Use Apitrain Smartwatch or\n training aid to follow your plan"
+            />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:background="@drawable/ic_device"
+            android:layout_marginRight="20dp"
+           />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/third_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_txt"
+            android:fontFamily="@font/mavenprobold"
+            android:textSize="15sp"
+            android:text="3)For more information and\n features check: "/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_marginRight="20dp"
+            android:background="@mipmap/api_train_logo"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/website_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:textSize="15sp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/mavenprobold"
+        android:text="@string/www_apitrain_co_uk"
+        android:textColor="@color/grey_txt" />
+</LinearLayout>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:fillViewport="true"
+    android:nestedScrollingEnabled="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/top_panel"
+                android:text="Great stuff, \n You are ready to start!"
+                android:textColor="@color/grey_text"
+                android:textSize="@dimen/txt_normal"
+                android:gravity="center"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/layout_yes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_margin="20dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/initialText"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/img_dumbbell"
+                        android:text="Your initial training plan is \n improve strenght"
+                        android:textColor="@color/grey_text"
+                        android:textSize="@dimen/txt_normal" />
+
+                    <ImageView
+                        android:id="@+id/img_dumbbell"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/workout" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_margin="20dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_goal_date"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/img_calendar"
+                        android:text="And your target date \n 21 FEB 2019"
+                        android:textColor="@color/grey_text"
+                        android:textSize="@dimen/txt_normal" />
+
+                    <ImageView
+                        android:id="@+id/img_calendar"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/workout" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txt_info_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="@string/txt_now_start_your_workout"
+                    android:textColor="@color/grey_text"
+                    android:textSize="@dimen/txt_normal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dummyText4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:textColor="@color/grey_txt"
+                    android:textSize="@dimen/txt_normal"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/txt_info_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/txt_now_start"
+                    android:gravity="center"
+                    android:textColor="@color/grey_text"
+                    android:textSize="@dimen/txt_normal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_info_no_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/txt_remember_use_wear"
+                    android:textColor="@color/grey_text"
+                    android:textSize="@dimen/txt_normal"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/card_background"
+            android:backgroundTint="@color/green"
+            android:text="Start training"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mavenprobold"
+            android:text="Sled Push"
+            android:textColor="@color/lighter_blue"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_reps_count"
+            android:layout_width="0dp"
+            android:layout_weight="0.7"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textAlignment="center"
+            android:layout_alignBaseline="@id/tv_name"
+            android:layout_toEndOf="@id/tv_name"
+            android:fontFamily="@font/mavenpromedium"
+            android:text="10 reps"
+            android:textColor="@color/dark_blue"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_weight"
+            android:layout_width="0dp"
+            android:layout_weight="0.7"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:fontFamily="@font/mavenpromedium"
+            android:text="300.0"
+            android:textColor="@color/grey_txt"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_rest_time"
+            android:layout_width="0dp"
+            android:layout_weight="0.7"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tv_weight"
+            android:textAlignment="center"
+            android:layout_toEndOf="@id/tv_weight"
+            android:fontFamily="@font/mavenpromedium"
+            android:text="00:00:00"
+            android:textColor="@color/grey_txt"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--if the ResultActivity opens on a rounded wear then this view will load-->
+
+<android.support.wearable.view.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:autofit="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_complete_workout"
+    android:keepScreenOn="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/_5sdp"
+        android:paddingRight="@dimen/_5sdp"
+        android:paddingTop="@dimen/_3sdp"
+        app:layout_box="all">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.99"
+            android:text="Workout Complete!"
+            android:textColor="@color/green"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:maxLines="1"
+            autofit:minTextSize="@dimen/_11sdp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_margin="@dimen/_3sdp"
+            android:layout_weight="0.99"
+            android:text="How was it??"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            android:maxLines="1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="0.95"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/view_rate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:background="@drawable/bordered_bg_grey"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/_3sdp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/selector_star_rate" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/selector_star_rate" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/selector_star_rate" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/selector_star_rate" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/selector_star_rate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <me.grantland.widget.AutofitTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Too easy"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_7ssp"
+                    autofit:minTextSize="@dimen/_11sdp" />
+
+                <me.grantland.widget.AutofitTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Chanllenging"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_7ssp"
+                    autofit:minTextSize="@dimen/_11sdp" />
+
+                <me.grantland.widget.AutofitTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="Too difficult"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_7ssp"
+                    autofit:minTextSize="@dimen/_11sdp" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:background="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/view_timer_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.87"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Total Workout Time!"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp"
+                android:maxLines="1"
+                android:gravity="center"
+                android:layout_weight="1"
+                autofit:minTextSize="@dimen/_11sdp" />
+
+            <TextView
+                android:id="@+id/tv_total_time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="00:00:00"
+                android:textColor="@color/green"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:gravity="center"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/view_calories_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.87"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Calories"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp"
+                android:maxLines="1"
+                android:gravity="center"
+                android:layout_weight="1"
+                autofit:minTextSize="@dimen/_11sdp" />
+
+            <TextView
+                android:id="@+id/tv_calories"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="00"
+                android:textColor="@color/green"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:background="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp"
+            android:layout_weight="0.9"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/ic_heart" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <me.grantland.widget.AutofitTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:maxLines="1"
+                    android:text="Min"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/_11sdp"
+                    autofit:minTextSize="@dimen/_11sdp" />
+
+                <me.grantland.widget.AutofitTextView
+                    android:id="@+id/tv_min_heart_rate"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="000"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp"
+                    autofit:minTextSize="@dimen/_11sdp" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <me.grantland.widget.AutofitTextView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="wrap_content"
+                    android:text="Max"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/_11sdp"
+                    android:maxLines="1"
+                    autofit:minTextSize="@dimen/_11sdp" />
+
+                <me.grantland.widget.AutofitTextView
+                    android:id="@+id/tv_max_heart_rate"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="wrap_content"
+                    android:text="000"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp"
+                    android:maxLines="1"
+                    autofit:minTextSize="@dimen/_11sdp" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <me.grantland.widget.AutofitTextView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="wrap_content"
+                    android:text="Avg"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/_11sdp"
+                    android:maxLines="1"
+                    autofit:minTextSize="@dimen/_11sdp" />
+
+                <me.grantland.widget.AutofitTextView
+                    android:id="@+id/tv_avg_heart_rate"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="wrap_content"
+                    android:text="000"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp"
+                    android:maxLines="1"
+                    autofit:minTextSize="@dimen/_11sdp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.wearable.view.BoxInsetLayout>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Apitrain</string>
+    <!--General Texts-->
+    <string name="txt_all_workouts_completed">All workouts completed</string>
+    <string name="txt_default_message">Swipe left to start</string>
+
+    <!--Error Messages-->
+    <string name="error_message_network_unavailable">Internet connection is not available</string>
+    <string name="error_message_no_next_workout">No next workout available</string>
+    <string name="error_message_routines_not_synced">Training plans not synced yet</string>
+    <string name="error_message_no_exercise_completed">No one exercise completed</string>
+    <string name="error_message_workout_data_not_available">Workouts data not available for selected trainingPlan</string>
+    <string name="error_message_no_circuit_available">No circuit available for this workout</string>
+    <string name="txt_submit">Submit</string>
+
+    <!--Progress Messages-->
+</resources>

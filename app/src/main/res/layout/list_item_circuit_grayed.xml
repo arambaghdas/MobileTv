@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/exerciseLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/grey"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/mavenprobold"
+            android:text="Sled Push"
+            android:textColor="@color/lighter_blue"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_sets_count"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:fontFamily="@font/mavenpromedium"
+            android:maxLines="1"
+            android:text="1"
+            android:textColor="@color/grey_txt"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_reps"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mavenpromedium"
+            android:text="20"
+            android:textColor="@color/grey_txt"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_weight"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mavenpromedium"
+            android:text="300.0"
+            android:gravity="center"
+            android:textColor="@color/grey_txt"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_rest_time"
+            android:layout_width="0dp"
+            android:layout_weight="0.7"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mavenpromedium"
+            android:text="00:00:00"
+            android:textColor="@color/grey_txt"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</LinearLayout>

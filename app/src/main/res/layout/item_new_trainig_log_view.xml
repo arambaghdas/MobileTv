@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_main"
+        android:layout_width="320dp"
+        android:layout_height="130dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_button2">
+
+        <TextView
+            android:id="@+id/tv_log_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/mavenprobold"
+            android:maxWidth="130dp"
+            android:maxLines="2"
+            android:text="Pep Cardio"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/star1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/tv_log_name"
+            android:layout_alignStart="@id/tv_log_name"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/easy_white" />
+
+        <View
+            android:id="@+id/star2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/tv_log_name"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/star1"
+            android:background="@drawable/medium_white" />
+
+        <View
+            android:id="@+id/star3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/tv_log_name"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/star2"
+            android:background="@drawable/hard_white" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/star3"
+            android:layout_alignTop="@id/tv_log_name"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp">
+
+
+            <ImageView
+                android:id="@+id/log_ic_zone"
+                android:visibility="visible"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/tv_log_cal"
+                android:layout_alignStart="@id/tv_log_cal"
+                android:background="@drawable/ic_efort"
+                android:backgroundTint="@color/black"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/tv_log_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:drawablePadding="8dp"
+                android:drawableStart="@drawable/timer_black_line"
+                android:fontFamily="@font/mavenprobold"
+                android:textColor="@color/lightgreen"
+                android:text="00:01:13" />
+
+            <TextView
+                android:id="@+id/tv_log_cal"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:drawableStart="@drawable/bitmap22"
+                android:drawablePadding="8dp"
+                android:layout_below="@id/tv_log_timer"
+                android:fontFamily="@font/mavenprobold"
+                android:layout_height="wrap_content"
+                android:text="463" />
+
+            <TextView
+                android:id="@+id/tv_log_zone"
+                android:visibility="visible"
+                android:layout_below="@+id/tv_log_cal"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/log_ic_zone"
+                android:fontFamily="@font/mavenprobold"
+                android:drawablePadding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ZONE 5" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_count"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="3dp"
+        android:background="@drawable/custom_button"
+        android:padding="0dp">
+
+        <TextView
+            android:id="@+id/tv_day_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/mavenprobold"
+            android:text="12"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_month_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_day_count"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/mavenprobold"
+            android:text="Apr"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background6"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/circuit_view_card"
+        android:id="@+id/lay_card"
+        android:layout_height="200dp"
+        android:layout_width="320dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lay_card"
+        android:layout_alignStart="@id/lay_card"
+        android:textSize="20sp"
+        android:fontFamily="@font/promptbold"
+        android:text="Circuit List"
+        android:textColor="@color/greyblack_text"
+        android:textAllCaps="true"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tv_title"
+        android:id="@+id/rv_circuits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:elevation="5dp"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:drawableTop="@drawable/dumbbell"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/mavenprobold"
+        android:text="NO CIRCUITS ASSIGNED YET"
+        android:textColor="@color/grey_text" />
+</RelativeLayout>

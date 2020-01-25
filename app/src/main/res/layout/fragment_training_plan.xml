@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:id="@+id/mainLayout"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_marginTop="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvPlanName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/mavenprobold"
+                    android:maxWidth="160dp"
+                    android:maxLines="3"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_training_daysperweek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignBottom="@id/tvPlanName"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="center_vertical"
+                    android:layout_toStartOf="@id/tv_days_trained"
+                    android:fontFamily="@font/mavenprobold"
+                    android:text="@string/txt_days_per_week_caps"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/grey_text"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_days_trained"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="bottom"
+                    android:layout_alignBottom="@id/tv_training_daysperweek"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/mavenprobold"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="37sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_list"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_button2"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/tv_workouttv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/mavenprobold"
+                    android:text="WORKOUT"
+                    android:textColor="@color/activegreen"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_daytv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/mavenprobold"
+                    android:text="DAY"
+                    android:textColor="@color/activegreen"
+                    android:textSize="18sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_workouts"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/tv_workouttv"
+                    android:layout_marginTop="20dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_no_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:elevation="5dp"
+                android:fontFamily="@font/mavenprobold"
+                android:gravity="center"
+                android:textColor="@color/grey_text"
+                android:text="NO TRAINING PLAN ASSIGNED"
+                android:textSize="14sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
