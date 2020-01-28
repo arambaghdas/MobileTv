@@ -156,6 +156,7 @@ public class HomeActivity extends BaseActivity
     public static boolean trainingPlan = true;
     public static GraphInfo graphInfo;
     public UserPrefManager userPrefManager;
+    private boolean backFromWeeklyGoals = false;
 
     public static HomeActivity getInstance() {
         return homeActivity;
@@ -167,6 +168,17 @@ public class HomeActivity extends BaseActivity
         super.onResume();
         homeActivity = this;
         setUserInfo();
+        updateNavProgressFragment();
+    }
+
+    private void updateNavProgressFragment() {
+        if (backFromWeeklyGoals) {
+            backFromWeeklyGoals = false;
+            MenuItem menuItem = nvMenu.getCheckedItem();
+            if (menuItem != null && menuItem.getItemId() == R.id.nav_progress) {
+                addNavProgressFragment();
+            }
+        }
     }
 
     @Override
@@ -249,7 +261,15 @@ public class HomeActivity extends BaseActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        addFragment(item.getItemId());
+        if (item.getItemId() == R.id.nav_weekly_goals) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+            startActivity(new Intent(this, WeeklyGoalsActivity.class));
+            backFromWeeklyGoals = true;
+            return false;
+        } else {
+            addFragment(item.getItemId());
+            backFromWeeklyGoals = false;
+        }
         return true;
     }
 
@@ -257,17 +277,7 @@ public class HomeActivity extends BaseActivity
         fragment = null;
         switch (menuId) {
             case R.id.nav_progress:
-                backToNormalColor();
-                currentFragmentIndex = 0;
-                GraphHelpers.fromHomeScreen = true;
-                if (expiredTrial){
-                    fragment = UpgradeFragment.newInstance();
-                }else {
-                    fragment = TemporaryProgressFragment.newInstance();
-                }
-                nvMenu.setCheckedItem(R.id.nav_progress);
-                setTitle("MY PROGRESS");
-                setDividerVisible(true);
+                addNavProgressFragment();
                 break;
             case R.id.nav_training_logs:
                 currentFragmentIndex = 1;
@@ -280,6 +290,8 @@ public class HomeActivity extends BaseActivity
                 nvMenu.setCheckedItem(R.id.nav_training_logs);
                 setTitle("TRAINING LOGS");
                 setDividerVisible(true);
+                addContentFragment(fragment);
+                drawerLayout.closeDrawer(GravityCompat.START);
                 break;
 
 //            case R.id.nav_ftiness_plan:
@@ -318,6 +330,8 @@ public class HomeActivity extends BaseActivity
                 nvMenu.setCheckedItem(R.id.nav_training_plan);
                 setTitle("VIEW TRAINING PLAN");
                 setDividerVisible(true);
+                addContentFragment(fragment);
+                drawerLayout.closeDrawer(GravityCompat.START);
                 break;
 
             case R.id.nav_foodplan_list:
@@ -342,6 +356,8 @@ public class HomeActivity extends BaseActivity
                 }
                 nvMenu.setCheckedItem(R.id.nav_foodplan_list);
                 setTitle("FOOD PLAN");
+                addContentFragment(fragment);
+                drawerLayout.closeDrawer(GravityCompat.START);
                 break;
 
             case R.id.nav_help_feedback:
@@ -357,9 +373,25 @@ public class HomeActivity extends BaseActivity
                 setOverflowButtonColor(toolbar, getResources().getColor(R.color.background_blue));
                 nvMenu.setCheckedItem(R.id.nav_foodplan_list);
                 setTitle("HELP & FEEDBACK");
+                addContentFragment(fragment);
+                drawerLayout.closeDrawer(GravityCompat.START);
                 break;
 
         }
+    }
+
+    private void addNavProgressFragment() {
+        backToNormalColor();
+        currentFragmentIndex = 0;
+        GraphHelpers.fromHomeScreen = true;
+        if (expiredTrial){
+            fragment = UpgradeFragment.newInstance();
+        }else {
+            fragment = TemporaryProgressFragment.newInstance();
+        }
+        nvMenu.setCheckedItem(R.id.nav_progress);
+        setTitle("MY PROGRESS");
+        setDividerVisible(true);
         addContentFragment(fragment);
         drawerLayout.closeDrawer(GravityCompat.START);
     }

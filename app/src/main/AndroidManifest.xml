@@ -89,6 +89,8 @@
         <activity android:name=".views.activities.BaseActivity" />
         <activity android:name="com.pttracker.trainingaid.activities.ExerciseActivity"/>
         <activity android:name=".views.activities.UpdatePasswordActivity" />
+        <activity android:name=".views.activities.WeeklyGoalsActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"

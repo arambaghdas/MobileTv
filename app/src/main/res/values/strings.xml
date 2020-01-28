@@ -166,6 +166,7 @@
     <string name="txt_thigh_skin_hint">Thigh skin fold (mm)</string>
     <string name="txt_add_calculate">Add and Calculate</string>
     <string name="txt_food_list">Food Plan</string>
+    <string name="weekly_goals">Weekly Goals</string>
     <string name="progress_message_loading_foodlist">Loading food list, Please wait</string>
     <string-array name="feedbacks">
         <item></item>
@@ -232,5 +233,19 @@
     <string name="progress_text2">Check the <u>online shop</u> for more details about the \n APITRAIN Smartwatch.</string>
     <string name="create_account">Create Account</string>
     <string name="start_workout">Start Workout</string>
+    <string name="type_weight">Type your weight</string>
+    <string name="type_height">Type your height</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="weekly_achievements">Weekly Achievements:</string>
+    <string name="weekly_goal_kcal">Weekly KCals</string>
+    <string name="weekly_goal_step">Weekly Steps</string>
+    <string name="weekly_goal_workout">Weekly Workout</string>
+    <string name="wear_device_header1">Wear a smart device to</string>
+    <string name="wear_device_header2">complete your weekly achievements</string>
+    <string name="metric_to_kg">Metric to kg</string>
+    <string name="metric_to_pound">Metric to pound</string>
+    <string name="metric_to_cm">Metric to cm</string>
+    <string name="metric_to_feet">Metric to feet</string>
+    <string name="type">Type</string>
 
 </resources>
