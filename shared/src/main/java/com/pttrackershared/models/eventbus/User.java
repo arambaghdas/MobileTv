@@ -4,7 +4,9 @@ import android.content.SharedPreferences;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.pttrackershared.plugins.ValidatorUtils;
 import com.pttrackershared.utils.Constants;
+import com.pttrackershared.utils.DoubleConverter;
 import com.pttrackershared.utils.SaveUserPreferences;
 
 import java.text.ParseException;
@@ -19,6 +21,11 @@ import java.util.Date;
 public class User {
 
     private static User CURRENT_USER = null;
+
+    private String MEASUREMENT_KG = "Kg";
+    private String MEASUREMENT_POUND ="Pound";
+    private String MEASUREMENT_CM = "Cm";
+    private String MEASUREMENT_FEET = "Feet";
 
     @SerializedName("client_id")
     @Expose
@@ -103,6 +110,16 @@ public class User {
     @SerializedName("pass2")
     @Expose
     private String code;
+
+    private String weekGoalKCal;
+
+    private String weekGoalSteps;
+
+    private String weekGoalWorkout;
+
+    private String weightMeasurement;
+
+    private String heightMeasurement;
 
     private int userId;
 
@@ -423,4 +440,76 @@ public class User {
         return user;
     }
 
+    public String getWeekGoalKCal() {
+        return weekGoalKCal;
+        //return DoubleConverter.toString(weekGoalKCal);
+    }
+
+    public void setWeekGoalKCal(String weekGoalKCal) {
+        this.weekGoalKCal = weekGoalKCal;
+    }
+
+    public String getWeekGoalSteps() {
+        return weekGoalSteps;
+        //return DoubleConverter.toString(weekGoalSteps);
+    }
+
+    public void setWeekGoalSteps(String weekGoalSteps) {
+        this.weekGoalSteps = weekGoalSteps;
+    }
+
+    public String getWeekGoalWorkout() {
+        return weekGoalWorkout;
+        //return DoubleConverter.toString(weekGoalWorkout);
+    }
+
+    public void setWeekGoalWorkout(String weekGoalWorkout) {
+        this.weekGoalWorkout = weekGoalWorkout;
+    }
+
+    public boolean isMeasurementKg() {
+        return getWeightMeasurement().equals(MEASUREMENT_KG);
+    }
+
+    public boolean isMeasurementCm() {
+        return getHeightMeasurement().equals(MEASUREMENT_CM);
+    }
+
+    public String getWeightMeasurement() {
+        if (ValidatorUtils.IsNullOrEmpty(weightMeasurement)) {
+            return MEASUREMENT_KG;
+        }
+        return weightMeasurement;
+    }
+
+    public void setWeightMeasurement(String weightMeasurement) {
+        this.weightMeasurement = weightMeasurement;
+    }
+
+    public String getHeightMeasurement() {
+        if (ValidatorUtils.IsNullOrEmpty(heightMeasurement)) {
+            return MEASUREMENT_CM;
+        }
+        return heightMeasurement;
+    }
+
+    public void setHeightMeasurement(String heightMeasurement) {
+        this.heightMeasurement = heightMeasurement;
+    }
+
+    public void setWeightMeasurementKg() {
+        this.weightMeasurement = MEASUREMENT_KG;
+    }
+
+    public void setWeightMeasurementPound() {
+        this.weightMeasurement = MEASUREMENT_POUND;
+    }
+
+    public void setHeightMeasurementCm() {
+        this.heightMeasurement = MEASUREMENT_CM;
+    }
+
+    public void setHeightMeasurementFeet() {
+        this.heightMeasurement = MEASUREMENT_FEET;
+    }
 }

@@ -1,12 +1,13 @@
 package train.apitrainclient.views.activities;
 
-import android.app.AppComponentFactory;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.pttrackershared.models.eventbus.User;
 
@@ -16,6 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import train.apitrainclient.R;
+import train.apitrainclient.databinding.ActivityWeeklyGoalsBinding;
 import train.apitrainclient.utils.SharedPrefManager;
 
 public class WeeklyGoalsActivity extends AppCompatActivity {
@@ -27,13 +29,16 @@ public class WeeklyGoalsActivity extends AppCompatActivity {
     Spinner spWeight;
 
     User user;
+    private ActivityWeeklyGoalsBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weekly_goals);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_weekly_goals);
         ButterKnife.bind(this);
+
         user = SharedPrefManager.getUser(this);
+        binding.setUser(user);
         createSpinners();
     }
 
@@ -53,10 +58,53 @@ public class WeeklyGoalsActivity extends AppCompatActivity {
         ArrayAdapter<String> spinner2Adapter = new ArrayAdapter<String>(WeeklyGoalsActivity.this,
                 R.layout.spinner_weekly_goals, heights);
         spHeight.setAdapter(spinner2Adapter);
+
+        if (user.isMeasurementKg()) {
+            spWeight.setSelection(0);
+        } else {
+            spWeight.setSelection(1);
+        }
+
+        if (user.isMeasurementCm()) {
+            spHeight.setSelection(0);
+        } else {
+            spHeight.setSelection(1);
+        }
+
+        spWeight.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    binding.getUser().setWeightMeasurementKg();
+                } else {
+                    binding.getUser().setWeightMeasurementPound();
+                }
+            }
+
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+
+            }
+        });
+
+        spHeight.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    binding.getUser().setHeightMeasurementCm();
+                } else {
+                    binding.getUser().setHeightMeasurementFeet();
+                }
+            }
+
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
 
     @OnClick(R.id.rl_back)
     public void onBackPress() {
+        SharedPrefManager.setUser(this, binding.getUser());
         onBackPressed();
     }
 

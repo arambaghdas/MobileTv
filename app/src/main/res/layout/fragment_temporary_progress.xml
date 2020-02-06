@@ -104,9 +104,34 @@
 
                 </LinearLayout>
 
+                <RelativeLayout
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/apsv"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_below="@id/userHeaderLayout"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/steps_icon" />
+
+                    <com.github.lzyzsd.circleprogress.DonutProgress
+                        android:id="@+id/apsv1"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp" />
+
+                </RelativeLayout>
+
                 <LinearLayout
                     android:id="@+id/daysLayout"
-                    android:layout_below="@id/userHeaderLayout"
+                    android:layout_below="@id/apsv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"

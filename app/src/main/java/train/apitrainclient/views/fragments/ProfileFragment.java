@@ -158,10 +158,11 @@ public class ProfileFragment extends BaseFragment implements OnUpdateUserAccount
         }
 
         if (!ValidatorUtils.IsNullOrEmpty(user.getHeight())) {
-            etHeight.setText(user.getHeight() + " cm");
+            etHeight.setText(user.getHeight() + " " + user.getHeightMeasurement());
         }
+
         if (!ValidatorUtils.IsNullOrEmpty(user.getWeight())) {
-            etWeight.setText(user.getWeight() + " Kg");
+            etWeight.setText(user.getWeight() + " " + user.getWeightMeasurement());
         }
 
         if (user.getDobString() != null) {

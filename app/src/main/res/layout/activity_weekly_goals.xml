@@ -1,121 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:background="@drawable/background"
-    android:windowTranslucentStatus="true">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="user"
+            type="com.pttrackershared.models.eventbus.User"/>
 
-    <FrameLayout
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:id="@+id/fl_top_view">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@drawable/background"
+        android:windowTranslucentStatus="true">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/rl_title">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/mavenprobold"
-                android:text="@string/update_profile"
-                android:layout_centerInParent="true"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="5dp"
-            android:id="@+id/rl_back">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:tint="@android:color/white"
-                android:src="@drawable/ic_arrow_back" />
-
-        </RelativeLayout>
-
-    </FrameLayout>
-
-    <ScrollView
-        android:layout_below="@+id/fl_top_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <RelativeLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:id="@+id/fl_top_view">
 
-            <LinearLayout
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rl_title">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mavenprobold"
+                    android:text="@string/update_profile"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/rl_back">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:tint="@android:color/white"
+                    android:src="@drawable/ic_arrow_back" />
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <ScrollView
+            android:layout_below="@+id/fl_top_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:baselineAligned="false"
-                android:layout_marginTop="50dp"
-                android:id="@+id/ly_height"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:layout_marginEnd="26dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@android:color/transparent"
-                        android:gravity="center_vertical"
-                        android:textSize="16sp"
-                        android:layout_marginBottom="10dp"
-                        android:textColor="@android:color/white" />
+                    android:baselineAligned="false"
+                    android:layout_marginTop="50dp"
+                    android:id="@+id/ly_height"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:orientation="horizontal">
+                        android:layout_weight="0.5"
+                        android:layout_marginEnd="26dp"
+                        android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginBottom="5dp"
-                            android:layout_marginEnd="10dp"
-                            android:rotation="90"
-                            android:src="@drawable/lose_weight" />
-
-                        <EditText
-                            android:id="@+id/ed_height"
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent"
                             android:gravity="center_vertical"
-                            android:layout_marginStart="5dp"
                             android:textSize="16sp"
-                            android:textColor="@android:color/white"
-                            android:textColorHint="@android:color/white"
-                            android:singleLine="true"
-                            android:ellipsize="end"
-                            android:maxLines="1"
-                            android:inputType="numberDecimal"
-                            android:hint="@string/type_height"/>
+                            android:layout_marginBottom="10dp"
+                            android:textColor="@android:color/white" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:rotation="90"
+                                android:src="@drawable/lose_weight" />
+
+                            <EditText
+                                android:id="@+id/ed_height"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:layout_marginStart="5dp"
+                                android:textSize="16sp"
+                                android:textColor="@android:color/white"
+                                android:textColorHint="@android:color/white"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:inputType="numberDecimal"
+                                android:text="@={user.height}"
+                                android:hint="@string/type_height"/>
 
                         </LinearLayout>
 
@@ -127,81 +135,189 @@
                             android:layout_marginStart="16dp"
                             android:layout_marginBottom="5dp" />
 
-                     </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:layout_marginEnd="16dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@android:color/transparent"
-                        android:gravity="center_vertical"
-                        android:textSize="16sp"
-                        android:text="@string/type"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginStart="10dp"
-                        android:textColor="@android:color/white" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:orientation="horizontal">
-
-                        <Spinner
-                            android:id="@+id/sp_height"
-                            android:popupBackground="@color/greyblack_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
                     </LinearLayout>
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:background="@android:color/black"
-                        android:layout_marginTop="7dp"
-                        android:layout_marginStart="6dp"
-                        android:layout_marginBottom="5dp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:gravity="center_vertical"
+                            android:textSize="16sp"
+                            android:text="@string/type"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="10dp"
+                            android:textColor="@android:color/white" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <Spinner
+                                android:id="@+id/sp_height"
+                                android:popupBackground="@color/greyblack_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@android:color/black"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginBottom="5dp" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:layout_marginTop="50dp"
+                    android:id="@+id/ly_weight"
+                    android:layout_below="@+id/ly_height"
+                    android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:baselineAligned="false"
-                android:layout_marginTop="50dp"
-                android:id="@+id/ly_weight"
-                android:layout_below="@+id/ly_height"
-                android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_marginEnd="26dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/white" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:tint="@color/white"
+                                android:src="@drawable/weight_profile" />
+
+                            <EditText
+                                android:id="@+id/ed_weight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:layout_marginStart="5dp"
+                                android:textSize="16sp"
+                                android:textColor="@android:color/white"
+                                android:textColorHint="@android:color/white"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:inputType="numberDecimal"
+                                android:text="@={user.weight}"
+                                android:hint="@string/type_weight"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@android:color/black"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginBottom="5dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:gravity="center_vertical"
+                            android:textSize="16sp"
+                            android:text="@string/type"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="10dp"
+                            android:textColor="@android:color/white" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <Spinner
+                                android:id="@+id/sp_weight"
+                                android:popupBackground="@color/greyblack_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@android:color/black"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginBottom="5dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_weekly_achievements"
+                    android:layout_marginStart="10dp"
+                    android:layout_below="@+id/ly_weight"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="@font/mavenprobold"
+                    android:text="@string/weekly_achievements"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
+                    android:id="@+id/ly_weekly_kcal"
+                    android:layout_below="@+id/tv_weekly_achievements"
                     android:layout_marginEnd="26dp"
+                    android:layout_marginTop="40dp"
                     android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@android:color/transparent"
-                        android:gravity="center_vertical"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginBottom="10dp"
-                        android:textSize="16sp"
-                        android:textColor="@android:color/white" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:orientation="horizontal">
 
                         <ImageView
@@ -209,13 +325,12 @@
                             android:layout_height="16dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginStart="16dp"
-                            android:layout_marginBottom="5dp"
                             android:layout_marginEnd="10dp"
-                            android:tint="@color/white"
-                            android:src="@drawable/weight_profile" />
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/bitmap22" />
 
                         <EditText
-                            android:id="@+id/ed_weight"
+                            android:id="@+id/ed_weekly_goal_kcal"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent"
@@ -228,7 +343,8 @@
                             android:ellipsize="end"
                             android:maxLines="1"
                             android:inputType="numberDecimal"
-                            android:hint="@string/type_weight"/>
+                            android:text="@={user.weekGoalKCal}"
+                            android:hint="@string/weekly_goal_kcal"/>
 
                     </LinearLayout>
 
@@ -243,270 +359,167 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:layout_marginEnd="16dp"
+                    android:id="@+id/ly_weekly_steps"
+                    android:layout_below="@+id/ly_weekly_kcal"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginTop="40dp"
                     android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@android:color/transparent"
-                        android:gravity="center_vertical"
-                        android:textSize="16sp"
-                        android:text="@string/type"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginStart="10dp"
-                        android:textColor="@android:color/white" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:orientation="horizontal">
 
-                        <Spinner
-                            android:id="@+id/sp_weight"
-                            android:popupBackground="@color/greyblack_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:tint="@color/white"
+                            android:src="@drawable/steps_icon" />
+
+                        <EditText
+                            android:id="@+id/ed_weekly_goal_steps"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@android:color/white"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:inputType="numberDecimal"
+                            android:text="@={user.weekGoalSteps}"
+                            android:hint="@string/weekly_goal_step"/>
+
                     </LinearLayout>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.5dp"
                         android:background="@android:color/black"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="16dp"
                         android:layout_marginBottom="5dp" />
 
                 </LinearLayout>
 
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_weekly_achievements"
-                android:layout_marginStart="10dp"
-                android:layout_below="@+id/ly_weight"
-                android:layout_marginTop="40dp"
-                android:fontFamily="@font/mavenprobold"
-                android:text="@string/weekly_achievements"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ly_weekly_kcal"
-                android:layout_below="@+id/tv_weekly_achievements"
-                android:layout_marginEnd="26dp"
-                android:layout_marginTop="40dp"
-                android:orientation="vertical">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:id="@+id/ly_weekly_workout"
+                    android:layout_below="@+id/ly_weekly_steps"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginTop="40dp"
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:layout_marginTop="10dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:tint="@color/white"
+                            android:rotation="-230"
+                            android:src="@drawable/lose_weight"/>
+
+                        <EditText
+                            android:id="@+id/ed_weekly_workout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@android:color/white"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:inputType="numberDecimal"
+                            android:text="@={user.weekGoalWorkout}"
+                            android:hint="@string/weekly_goal_workout"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@android:color/black"
+                        android:layout_marginTop="5dp"
                         android:layout_marginStart="16dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:src="@drawable/bitmap22" />
-
-                    <EditText
-                        android:id="@+id/ed_weekly_goal_kcal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@android:color/transparent"
-                        android:gravity="center_vertical"
-                        android:layout_marginStart="5dp"
-                        android:textSize="16sp"
-                        android:textColor="@android:color/white"
-                        android:textColorHint="@android:color/white"
-                        android:singleLine="true"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:inputType="numberDecimal"
-                        android:hint="@string/weekly_goal_kcal"/>
+                        android:layout_marginBottom="5dp" />
 
                 </LinearLayout>
 
-                <View
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="@android:color/black"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginBottom="5dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ly_weekly_steps"
-                android:layout_below="@+id/ly_weekly_kcal"
-                android:layout_marginEnd="26dp"
-                android:layout_marginTop="40dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:tint="@color/white"
-                        android:src="@drawable/steps_icon" />
-
-                    <EditText
-                        android:id="@+id/ed_weekly_goal_steps"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@android:color/transparent"
-                        android:gravity="center_vertical"
-                        android:layout_marginStart="5dp"
-                        android:textSize="16sp"
-                        android:textColor="@android:color/white"
-                        android:textColorHint="@android:color/white"
-                        android:singleLine="true"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:inputType="numberDecimal"
-                        android:hint="@string/weekly_goal_step"/>
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="@android:color/black"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginBottom="5dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ly_weekly_workout"
-                android:layout_below="@+id/ly_weekly_steps"
-                android:layout_marginEnd="26dp"
-                android:layout_marginTop="40dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:tint="@color/white"
-                        android:rotation="-230"
-                        android:src="@drawable/lose_weight"/>
-
-                    <EditText
-                        android:id="@+id/ed_weekly_workout"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@android:color/transparent"
-                        android:gravity="center_vertical"
-                        android:layout_marginStart="5dp"
-                        android:textSize="16sp"
-                        android:textColor="@android:color/white"
-                        android:textColorHint="@android:color/white"
-                        android:singleLine="true"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:inputType="numberDecimal"
-                        android:hint="@string/weekly_goal_workout"/>
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="@android:color/black"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginBottom="5dp" />
-
-            </LinearLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/rl_wear_smart_device"
-                android:layout_below="@+id/ly_weekly_workout"
-                android:layout_marginTop="40dp"
-                android:layout_marginBottom="20dp"
-                android:layout_centerHorizontal="true"
-                android:fitsSystemWindows="true"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/custom_button2"
-                android:windowTranslucentStatus="true">
-
-                <ImageView
-                    android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/watchprofile" />
+                    android:id="@+id/rl_wear_smart_device"
+                    android:layout_below="@+id/ly_weekly_workout"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:fitsSystemWindows="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/custom_button2"
+                    android:windowTranslucentStatus="true">
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_marginStart="50dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/watchprofile" />
 
-                    <TextView
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginStart="50dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/mavenproregular"
-                        android:singleLine="true"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:text="@string/wear_device_header1"
-                        android:textColor="@color/greyblack_text"
-                        android:textSize="12sp" />
+                        android:layout_height="wrap_content">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:singleLine="true"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:fontFamily="@font/mavenproregular"
-                        android:text="@string/wear_device_header2"
-                        android:textColor="@color/greyblack_text"
-                        android:textSize="12sp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mavenproregular"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/wear_device_header1"
+                            android:textColor="@color/greyblack_text"
+                            android:textSize="12sp" />
 
-                </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:fontFamily="@font/mavenproregular"
+                            android:text="@string/wear_device_header2"
+                            android:textColor="@color/greyblack_text"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
             </RelativeLayout>
 
-        </RelativeLayout>
+        </ScrollView>
 
-    </ScrollView>
-
-</RelativeLayout>
+    </RelativeLayout>
+</layout>

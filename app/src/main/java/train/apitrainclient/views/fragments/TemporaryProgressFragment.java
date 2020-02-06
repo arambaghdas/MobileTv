@@ -1,6 +1,10 @@
 package train.apitrainclient.views.fragments;
 
+import android.animation.Animator;
+import android.animation.ValueAnimator;
+import android.graphics.Color;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,6 +19,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.github.lzyzsd.circleprogress.DonutProgress;
 import com.pttracker.trainingaid.fragments.LandingFragment;
 import com.pttracker.trainingaid.utils.ApiCallsHandler;
 import com.pttracker.trainingaid.utils.ListenersHandler;
@@ -136,6 +141,8 @@ public class TemporaryProgressFragment extends BaseFragment {
     TextView tv_more;
     @BindView(R.id.title1)
     TextView title1;
+    @BindView(R.id.apsv1)
+    DonutProgress mArcProgressStackView;
 
     public static boolean loadingViewShown = false;
     //region Overridden Methods from BaseFragment
@@ -194,6 +201,16 @@ public class TemporaryProgressFragment extends BaseFragment {
         getProgressData();
         else
         ProgressDataFill(model);
+
+        initProgress();
+
+    }
+
+    private void initProgress() {
+        mArcProgressStackView.setProgress(75);
+        mArcProgressStackView.setTextColor(getResources().getColor(R.color.white));
+        mArcProgressStackView.setFinishedStrokeColor(getResources().getColor(R.color.red));
+        mArcProgressStackView.setUnfinishedStrokeColor(getResources().getColor(R.color.light_grey));
 
     }
 
