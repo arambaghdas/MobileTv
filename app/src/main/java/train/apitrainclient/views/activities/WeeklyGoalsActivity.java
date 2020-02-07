@@ -80,8 +80,7 @@ public class WeeklyGoalsActivity extends AppCompatActivity {
                 }
             }
 
-            public void onNothingSelected(AdapterView<?> parent)
-            {
+            public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
@@ -104,8 +103,14 @@ public class WeeklyGoalsActivity extends AppCompatActivity {
 
     @OnClick(R.id.rl_back)
     public void onBackPress() {
-        SharedPrefManager.setUser(this, binding.getUser());
         onBackPressed();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        SharedPrefManager.setUser(this, binding.getUser());
+
     }
 
 }

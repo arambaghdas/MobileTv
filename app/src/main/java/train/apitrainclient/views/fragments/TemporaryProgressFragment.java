@@ -1,10 +1,5 @@
 package train.apitrainclient.views.fragments;
 
-import android.animation.Animator;
-import android.animation.ValueAnimator;
-import android.graphics.Color;
-import android.text.InputFilter;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,21 +10,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 
 import com.github.lzyzsd.circleprogress.DonutProgress;
 import com.pttracker.trainingaid.fragments.LandingFragment;
-import com.pttracker.trainingaid.utils.ApiCallsHandler;
-import com.pttracker.trainingaid.utils.ListenersHandler;
 import com.pttrackershared.models.eventbus.Circuit;
 import com.pttrackershared.models.eventbus.Exercise;
 import com.pttrackershared.models.eventbus.ProgressModel;
 import com.pttrackershared.models.eventbus.TrainingPlan;
 import com.pttrackershared.models.eventbus.TrainingPlanJsonModel;
 import com.pttrackershared.models.eventbus.Workout;
-import com.pttrackershared.utils.TrainingPlanPreferences;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.StatsSnapshot;
 
@@ -41,19 +31,16 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import de.hdodenhof.circleimageview.CircleImageView;
 import train.apitrainclient.R;
 import train.apitrainclient.listeners.OnFitnessGoalCompletionListener;
 import train.apitrainclient.listeners.OnFoodListCompletionListener;
 import train.apitrainclient.listeners.OnGetProgressDataCompletionListener;
-import train.apitrainclient.listeners.OnGetTrainingLogsCompletionListener;
 import train.apitrainclient.listeners.OnGetTrainingPlansCompletionListener;
 
 import com.pttrackershared.models.eventbus.FitnessGoalModel;
 import com.pttrackershared.models.eventbus.Meals;
 import com.pttrackershared.models.eventbus.MealsModel;
 import com.pttrackershared.models.eventbus.TrainingLog;
-import com.pttrackershared.models.eventbus.TrainingLogsModel;
 import com.pttrackershared.models.eventbus.User;
 
 import train.apitrainclient.networks.retrofit.RestApiManager;
@@ -141,8 +128,18 @@ public class TemporaryProgressFragment extends BaseFragment {
     TextView tv_more;
     @BindView(R.id.title1)
     TextView title1;
-    @BindView(R.id.apsv1)
-    DonutProgress mArcProgressStackView;
+    @BindView(R.id.dp_steps)
+    DonutProgress donutProgressSteps;
+    @BindView(R.id.tv_steps_progress)
+    TextView tvStepsProgress;
+    @BindView(R.id.dp_calories)
+    DonutProgress donutProgressCalories;
+    @BindView(R.id.tv_calories_progress)
+    TextView tvCaloriesProgress;
+    @BindView(R.id.dp_fitness)
+    DonutProgress donutProgressFitness;
+    @BindView(R.id.tv_fitness_progress)
+    TextView tvFitnessProgress;
 
     public static boolean loadingViewShown = false;
     //region Overridden Methods from BaseFragment
@@ -151,6 +148,10 @@ public class TemporaryProgressFragment extends BaseFragment {
     private Calendar calendar;
     ArrayList<TrainingLog> trainingLogs = new ArrayList<>();
     ProgressModel model;
+
+    enum Day {
+        MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -207,11 +208,179 @@ public class TemporaryProgressFragment extends BaseFragment {
     }
 
     private void initProgress() {
-        mArcProgressStackView.setProgress(75);
-        mArcProgressStackView.setTextColor(getResources().getColor(R.color.white));
-        mArcProgressStackView.setFinishedStrokeColor(getResources().getColor(R.color.red));
-        mArcProgressStackView.setUnfinishedStrokeColor(getResources().getColor(R.color.light_grey));
+        donutProgressSteps.setTextColor(getResources().getColor(R.color.white));
+        donutProgressSteps.setFinishedStrokeColor(getResources().getColor(R.color.red));
+        donutProgressSteps.setUnfinishedStrokeColor(getResources().getColor(R.color.light_grey));
 
+        donutProgressCalories.setTextColor(getResources().getColor(R.color.white));
+        donutProgressCalories.setFinishedStrokeColor(getResources().getColor(R.color.red));
+        donutProgressCalories.setUnfinishedStrokeColor(getResources().getColor(R.color.light_grey));
+
+        donutProgressFitness.setTextColor(getResources().getColor(R.color.white));
+        donutProgressFitness.setFinishedStrokeColor(getResources().getColor(R.color.red));
+        donutProgressFitness.setUnfinishedStrokeColor(getResources().getColor(R.color.light_grey));
+    }
+
+    private void updateProgressValues(Day day) {
+
+        int stepProgress = getStepsProgress(day);
+        tvStepsProgress.setText(String.valueOf(stepProgress));
+        donutProgressSteps.setProgress(stepProgress);
+
+        if (stepProgress >= 100) {
+            donutProgressSteps.setProgress(100);
+        } else {
+            donutProgressSteps.setProgress(stepProgress);
+        }
+
+        int workoutCaloriesProgress = getWorkoutCaloriesProgress(day);
+        tvCaloriesProgress.setText(String.valueOf(workoutCaloriesProgress));
+        donutProgressCalories.setProgress(workoutCaloriesProgress);
+
+        if (workoutCaloriesProgress >= 100) {
+            donutProgressCalories.setProgress(100);
+        } else {
+            donutProgressCalories.setProgress(workoutCaloriesProgress);
+        }
+
+        int workoutProgress = getWorkoutProgress(day);
+        tvFitnessProgress.setText(String.valueOf(workoutProgress));
+
+        if (workoutProgress >= 100) {
+            donutProgressFitness.setProgress(100);
+        } else {
+            donutProgressFitness.setProgress(workoutProgress);
+        }
+
+    }
+
+    private int getStepsProgress(Day day) {
+        float stepsGoal = 0.0f;
+        int steps = 0;
+
+        if (model != null) {
+            switch (day) {
+                case MONDAY:
+                    steps = model.getMonSteps();
+                    break;
+                case TUESDAY:
+                    steps = model.getTueSteps();
+                    break;
+                case WEDNESDAY:
+                    steps = model.getWedSteps();
+                    break;
+                case THURSDAY:
+                    steps = model.getThuSteps();
+                    break;
+                case FRIDAY:
+                    steps = model.getFriSteps();
+                    break;
+                case SATURDAY:
+                    steps = model.getSatSteps();
+                    break;
+                case SUNDAY:
+                    steps = model.getSunSteps();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        User user = SharedPrefManager.getUser(getContext());
+        if (user != null && !ValidatorUtils.IsNullOrEmpty(user.getWeekGoalSteps())) {
+            stepsGoal = Float.valueOf(user.getWeekGoalSteps());
+        } else {
+            return 0;
+        }
+
+        float progress = (steps/ stepsGoal) * 100.00f;
+        return (int) progress;
+    }
+
+    private int getWorkoutCaloriesProgress(Day day) {
+        float workoutCaloriesGoal = 0.0f;
+        int workoutCalories = 0;
+
+        if (model != null) {
+            switch (day) {
+                case MONDAY:
+                    workoutCalories = model.getMonWorkoutCalories();
+                    break;
+                case TUESDAY:
+                    workoutCalories = model.getTueWorkoutCalories();
+                    break;
+                case WEDNESDAY:
+                    workoutCalories = model.getWedWorkoutCalories();
+                    break;
+                case THURSDAY:
+                    workoutCalories = model.getThuWorkoutCalories();
+                    break;
+                case FRIDAY:
+                    workoutCalories = model.getFriWorkoutCalories();
+                    break;
+                case SATURDAY:
+                    workoutCalories = model.getSatWorkoutCalories();
+                    break;
+                case SUNDAY:
+                    workoutCalories = model.getSunWorkoutCalories();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        User user = SharedPrefManager.getUser(getContext());
+        if (user != null && !ValidatorUtils.IsNullOrEmpty(user.getWeekGoalKCal())) {
+            workoutCaloriesGoal = Float.valueOf(user.getWeekGoalKCal());
+        } else {
+            return 0;
+        }
+
+        float progress = (workoutCalories/ workoutCaloriesGoal) * 100.00f;
+        return (int) progress;
+    }
+
+    private int getWorkoutProgress(Day day) {
+        float workoutGoal = 0.0f;
+        int workout = 0;
+
+        if (model != null) {
+            switch (day) {
+                case MONDAY:
+                    workout = model.getMonWorkout();
+                    break;
+                case TUESDAY:
+                    workout = model.getTueWorkout();
+                    break;
+                case WEDNESDAY:
+                    workout = model.getWedWorkout();
+                    break;
+                case THURSDAY:
+                    workout = model.getThuWorkout();
+                    break;
+                case FRIDAY:
+                    workout = model.getFriWorkout();
+                    break;
+                case SATURDAY:
+                    workout = model.getSatWorkout();
+                    break;
+                case SUNDAY:
+                    workout = model.getSunWorkout();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        User user = SharedPrefManager.getUser(getContext());
+        if (user != null && !ValidatorUtils.IsNullOrEmpty(user.getWeekGoalWorkout())) {
+            workoutGoal = Float.valueOf(user.getWeekGoalWorkout());
+        } else {
+            return 0;
+        }
+
+        float progress = (workout/ workoutGoal) * 100.00f;
+        return (int) progress;
     }
 
     @Override
@@ -672,11 +841,15 @@ public class TemporaryProgressFragment extends BaseFragment {
 
             }
         }
+
+        //model.setMonWorkout(44);
+        //model.setMonSteps(20);
+        //model.setMonWorkoutCalories(15);
+
         lineMonday.setBackgroundColor(context.getResources().getColor(R.color.green_grapgh));
         btnMonday.setTextColor(context.getResources().getColor(R.color.background_blue));
-
+        updateProgressValues(Day.MONDAY);
     }
-
 
     @OnClick(R.id.btn_tuesday)
     void clickedBtnTuesday() {
@@ -698,6 +871,7 @@ public class TemporaryProgressFragment extends BaseFragment {
         }
         lineTuesday.setBackgroundColor(context.getResources().getColor(R.color.green_grapgh));
         btnTuesday.setTextColor(context.getResources().getColor(R.color.background_blue));
+        updateProgressValues(Day.TUESDAY);
     }
 
     @OnClick(R.id.btn_wednesday)
@@ -720,10 +894,11 @@ public class TemporaryProgressFragment extends BaseFragment {
         }
         lineWednesday.setBackgroundColor(context.getResources().getColor(R.color.green_grapgh));
         btnWednesday.setTextColor(context.getResources().getColor(R.color.background_blue));
+        updateProgressValues(Day.WEDNESDAY);
     }
 
     @OnClick(R.id.btn_thuesday)
-    void clickedBtnThuesday() {
+    void clickedBtnThursday() {
         selectedDay = 4;
         populateWorkoutArea(selectedDay, model);
         for (int i = 0; i < daysLayout.getChildCount(); i++) {
@@ -742,6 +917,7 @@ public class TemporaryProgressFragment extends BaseFragment {
         }
         lineThuesday.setBackgroundColor(context.getResources().getColor(R.color.green_grapgh));
         btnThuesday.setTextColor(context.getResources().getColor(R.color.background_blue));
+        updateProgressValues(Day.THURSDAY);
     }
 
     @OnClick(R.id.btn_friday)
@@ -764,6 +940,7 @@ public class TemporaryProgressFragment extends BaseFragment {
         }
         lineFriday.setBackgroundColor(context.getResources().getColor(R.color.green_grapgh));
         btnFriday.setTextColor(context.getResources().getColor(R.color.background_blue));
+        updateProgressValues(Day.FRIDAY);
     }
 
     @OnClick(R.id.btn_saturday)
@@ -786,6 +963,7 @@ public class TemporaryProgressFragment extends BaseFragment {
         }
         lineSaturday.setBackgroundColor(context.getResources().getColor(R.color.green_grapgh));
         btnSaturday.setTextColor(context.getResources().getColor(R.color.background_blue));
+        updateProgressValues(Day.SATURDAY);
     }
 
     @OnClick(R.id.btn_sunday)
@@ -808,6 +986,7 @@ public class TemporaryProgressFragment extends BaseFragment {
         }
         lineSunday.setBackgroundColor(context.getResources().getColor(R.color.green_grapgh));
         btnSunday.setTextColor(context.getResources().getColor(R.color.background_blue));
+        updateProgressValues(Day.SUNDAY);
     }
 
 }
