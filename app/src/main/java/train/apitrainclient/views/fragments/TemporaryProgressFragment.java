@@ -208,15 +208,15 @@ public class TemporaryProgressFragment extends BaseFragment {
     }
 
     private void initProgress() {
-        donutProgressSteps.setTextColor(getResources().getColor(R.color.white));
+        donutProgressSteps.setTextColor(getResources().getColor(R.color.transparent));
         donutProgressSteps.setFinishedStrokeColor(getResources().getColor(R.color.red));
         donutProgressSteps.setUnfinishedStrokeColor(getResources().getColor(R.color.light_grey));
 
-        donutProgressCalories.setTextColor(getResources().getColor(R.color.white));
+        donutProgressCalories.setTextColor(getResources().getColor(R.color.transparent));
         donutProgressCalories.setFinishedStrokeColor(getResources().getColor(R.color.red));
         donutProgressCalories.setUnfinishedStrokeColor(getResources().getColor(R.color.light_grey));
 
-        donutProgressFitness.setTextColor(getResources().getColor(R.color.white));
+        donutProgressFitness.setTextColor(getResources().getColor(R.color.transparent));
         donutProgressFitness.setFinishedStrokeColor(getResources().getColor(R.color.red));
         donutProgressFitness.setUnfinishedStrokeColor(getResources().getColor(R.color.light_grey));
     }
