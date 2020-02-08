@@ -6,7 +6,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.pttrackershared.plugins.ValidatorUtils;
 import com.pttrackershared.utils.Constants;
-import com.pttrackershared.utils.DoubleConverter;
 import com.pttrackershared.utils.SaveUserPreferences;
 
 import java.text.ParseException;
@@ -442,7 +441,6 @@ public class User {
 
     public String getWeekGoalKCal() {
         return weekGoalKCal;
-        //return DoubleConverter.toString(weekGoalKCal);
     }
 
     public void setWeekGoalKCal(String weekGoalKCal) {
@@ -451,7 +449,6 @@ public class User {
 
     public String getWeekGoalSteps() {
         return weekGoalSteps;
-        //return DoubleConverter.toString(weekGoalSteps);
     }
 
     public void setWeekGoalSteps(String weekGoalSteps) {
@@ -460,7 +457,6 @@ public class User {
 
     public String getWeekGoalWorkout() {
         return weekGoalWorkout;
-        //return DoubleConverter.toString(weekGoalWorkout);
     }
 
     public void setWeekGoalWorkout(String weekGoalWorkout) {

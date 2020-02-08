@@ -222,7 +222,6 @@ public class TemporaryProgressFragment extends BaseFragment {
     }
 
     private void updateProgressValues(Day day) {
-
         int stepProgress = getStepsProgress(day);
         tvStepsProgress.setText(String.valueOf(stepProgress));
         donutProgressSteps.setProgress(stepProgress);
@@ -841,10 +840,6 @@ public class TemporaryProgressFragment extends BaseFragment {
 
             }
         }
-
-        //model.setMonWorkout(44);
-        //model.setMonSteps(20);
-        //model.setMonWorkoutCalories(15);
 
         lineMonday.setBackgroundColor(context.getResources().getColor(R.color.green_grapgh));
         btnMonday.setTextColor(context.getResources().getColor(R.color.background_blue));
