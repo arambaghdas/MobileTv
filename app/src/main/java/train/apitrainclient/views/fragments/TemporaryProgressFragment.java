@@ -204,7 +204,6 @@ public class TemporaryProgressFragment extends BaseFragment {
         ProgressDataFill(model);
 
         initProgress();
-
     }
 
     private void initProgress() {
@@ -221,9 +220,9 @@ public class TemporaryProgressFragment extends BaseFragment {
         donutProgressFitness.setUnfinishedStrokeColor(getResources().getColor(R.color.light_grey));
     }
 
-    private void updateProgressValues(Day day) {
-        int stepProgress = getStepsProgress(day);
-        tvStepsProgress.setText(String.valueOf(stepProgress));
+    private void updateProgressValues() {
+        int stepProgress = getStepsProgress();
+        tvStepsProgress.setText(String.valueOf((int) getStepsTotal()));
         donutProgressSteps.setProgress(stepProgress);
 
         if (stepProgress >= 100) {
@@ -232,8 +231,8 @@ public class TemporaryProgressFragment extends BaseFragment {
             donutProgressSteps.setProgress(stepProgress);
         }
 
-        int workoutCaloriesProgress = getWorkoutCaloriesProgress(day);
-        tvCaloriesProgress.setText(String.valueOf(workoutCaloriesProgress));
+        int workoutCaloriesProgress = getWorkoutCaloriesProgress();
+        tvCaloriesProgress.setText(String.valueOf((int) getWorkoutCaloriesTotal()));
         donutProgressCalories.setProgress(workoutCaloriesProgress);
 
         if (workoutCaloriesProgress >= 100) {
@@ -242,144 +241,86 @@ public class TemporaryProgressFragment extends BaseFragment {
             donutProgressCalories.setProgress(workoutCaloriesProgress);
         }
 
-        int workoutProgress = getWorkoutProgress(day);
-        tvFitnessProgress.setText(String.valueOf(workoutProgress));
+        int workoutProgress = getWorkoutProgress();
+        tvFitnessProgress.setText(String.valueOf((int) getWorkoutTotal()));
 
         if (workoutProgress >= 100) {
             donutProgressFitness.setProgress(100);
         } else {
             donutProgressFitness.setProgress(workoutProgress);
         }
-
     }
 
-    private int getStepsProgress(Day day) {
-        float stepsGoal = 0.0f;
-        int steps = 0;
+    private int getStepsProgress() {
+        float progress = (getStepsTotal()/ getWeekGoalSteps()) * 100.00f;
+        return (int) progress;
+    }
 
+    private float getStepsTotal() {
         if (model != null) {
-            switch (day) {
-                case MONDAY:
-                    steps = model.getMonSteps();
-                    break;
-                case TUESDAY:
-                    steps = model.getTueSteps();
-                    break;
-                case WEDNESDAY:
-                    steps = model.getWedSteps();
-                    break;
-                case THURSDAY:
-                    steps = model.getThuSteps();
-                    break;
-                case FRIDAY:
-                    steps = model.getFriSteps();
-                    break;
-                case SATURDAY:
-                    steps = model.getSatSteps();
-                    break;
-                case SUNDAY:
-                    steps = model.getSunSteps();
-                    break;
-                default:
-                    break;
-            }
+            return model.getMonSteps() + model.getTueSteps() +
+                   model.getWedSteps() + model.getThuSteps() +
+                   model.getFriSteps() + model.getSatSteps() +
+                   model.getSunSteps();
         }
+        return 0;
+    }
 
+    private float getWeekGoalSteps() {
         User user = SharedPrefManager.getUser(getContext());
         if (user != null && !ValidatorUtils.IsNullOrEmpty(user.getWeekGoalSteps())) {
-            stepsGoal = Float.valueOf(user.getWeekGoalSteps());
+            return Float.valueOf(user.getWeekGoalSteps());
         } else {
             return 0;
         }
+    }
 
-        float progress = (steps/ stepsGoal) * 100.00f;
+    private int getWorkoutCaloriesProgress() {
+        float progress = (getWorkoutCaloriesTotal()/ getWeekGoalKCal()) * 100.00f;
         return (int) progress;
     }
 
-    private int getWorkoutCaloriesProgress(Day day) {
-        float workoutCaloriesGoal = 0.0f;
-        int workoutCalories = 0;
-
+    private float getWorkoutCaloriesTotal() {
         if (model != null) {
-            switch (day) {
-                case MONDAY:
-                    workoutCalories = model.getMonWorkoutCalories();
-                    break;
-                case TUESDAY:
-                    workoutCalories = model.getTueWorkoutCalories();
-                    break;
-                case WEDNESDAY:
-                    workoutCalories = model.getWedWorkoutCalories();
-                    break;
-                case THURSDAY:
-                    workoutCalories = model.getThuWorkoutCalories();
-                    break;
-                case FRIDAY:
-                    workoutCalories = model.getFriWorkoutCalories();
-                    break;
-                case SATURDAY:
-                    workoutCalories = model.getSatWorkoutCalories();
-                    break;
-                case SUNDAY:
-                    workoutCalories = model.getSunWorkoutCalories();
-                    break;
-                default:
-                    break;
-            }
+            return model.getMonWorkoutCalories() + model.getTueWorkoutCalories() +
+                   model.getWedWorkoutCalories() + model.getThuWorkoutCalories() +
+                   model.getFriWorkoutCalories() + model.getSatWorkoutCalories() +
+                   model.getSunWorkoutCalories();
         }
+        return 0;
+    }
 
+    private float getWeekGoalKCal() {
         User user = SharedPrefManager.getUser(getContext());
         if (user != null && !ValidatorUtils.IsNullOrEmpty(user.getWeekGoalKCal())) {
-            workoutCaloriesGoal = Float.valueOf(user.getWeekGoalKCal());
+            return Float.valueOf(user.getWeekGoalKCal());
         } else {
             return 0;
         }
+    }
 
-        float progress = (workoutCalories/ workoutCaloriesGoal) * 100.00f;
+    private int getWorkoutProgress() {
+        float progress = (getWorkoutTotal()/ getWeekGoalWorkout()) * 100.00f;
         return (int) progress;
     }
 
-    private int getWorkoutProgress(Day day) {
-        float workoutGoal = 0.0f;
-        int workout = 0;
-
+    private float getWorkoutTotal() {
         if (model != null) {
-            switch (day) {
-                case MONDAY:
-                    workout = model.getMonWorkout();
-                    break;
-                case TUESDAY:
-                    workout = model.getTueWorkout();
-                    break;
-                case WEDNESDAY:
-                    workout = model.getWedWorkout();
-                    break;
-                case THURSDAY:
-                    workout = model.getThuWorkout();
-                    break;
-                case FRIDAY:
-                    workout = model.getFriWorkout();
-                    break;
-                case SATURDAY:
-                    workout = model.getSatWorkout();
-                    break;
-                case SUNDAY:
-                    workout = model.getSunWorkout();
-                    break;
-                default:
-                    break;
-            }
+            return model.getMonWorkout() + model.getTueWorkout() +
+                    model.getWedWorkout() + model.getThuWorkout() +
+                    model.getFriWorkout() +  model.getSatWorkout() +
+                    model.getSunWorkout();
         }
+        return 0;
+    }
 
+    private float getWeekGoalWorkout() {
         User user = SharedPrefManager.getUser(getContext());
         if (user != null && !ValidatorUtils.IsNullOrEmpty(user.getWeekGoalWorkout())) {
-            workoutGoal = Float.valueOf(user.getWeekGoalWorkout());
+            return Float.valueOf(user.getWeekGoalWorkout());
         } else {
             return 0;
         }
-
-        float progress = (workout/ workoutGoal) * 100.00f;
-        return (int) progress;
     }
 
     @Override
@@ -520,6 +461,7 @@ public class TemporaryProgressFragment extends BaseFragment {
         } else if (selectedDay == 7) {
             btnSunday.performClick();
         }
+        updateProgressValues();
     }
 
     //    @OnClick(R.id.fitness_goal)
@@ -843,7 +785,6 @@ public class TemporaryProgressFragment extends BaseFragment {
 
         lineMonday.setBackgroundColor(context.getResources().getColor(R.color.green_grapgh));
         btnMonday.setTextColor(context.getResources().getColor(R.color.background_blue));
-        updateProgressValues(Day.MONDAY);
     }
 
     @OnClick(R.id.btn_tuesday)
@@ -866,7 +807,6 @@ public class TemporaryProgressFragment extends BaseFragment {
         }
         lineTuesday.setBackgroundColor(context.getResources().getColor(R.color.green_grapgh));
         btnTuesday.setTextColor(context.getResources().getColor(R.color.background_blue));
-        updateProgressValues(Day.TUESDAY);
     }
 
     @OnClick(R.id.btn_wednesday)
@@ -889,7 +829,6 @@ public class TemporaryProgressFragment extends BaseFragment {
         }
         lineWednesday.setBackgroundColor(context.getResources().getColor(R.color.green_grapgh));
         btnWednesday.setTextColor(context.getResources().getColor(R.color.background_blue));
-        updateProgressValues(Day.WEDNESDAY);
     }
 
     @OnClick(R.id.btn_thuesday)
@@ -912,7 +851,6 @@ public class TemporaryProgressFragment extends BaseFragment {
         }
         lineThuesday.setBackgroundColor(context.getResources().getColor(R.color.green_grapgh));
         btnThuesday.setTextColor(context.getResources().getColor(R.color.background_blue));
-        updateProgressValues(Day.THURSDAY);
     }
 
     @OnClick(R.id.btn_friday)
@@ -935,7 +873,6 @@ public class TemporaryProgressFragment extends BaseFragment {
         }
         lineFriday.setBackgroundColor(context.getResources().getColor(R.color.green_grapgh));
         btnFriday.setTextColor(context.getResources().getColor(R.color.background_blue));
-        updateProgressValues(Day.FRIDAY);
     }
 
     @OnClick(R.id.btn_saturday)
@@ -958,7 +895,6 @@ public class TemporaryProgressFragment extends BaseFragment {
         }
         lineSaturday.setBackgroundColor(context.getResources().getColor(R.color.green_grapgh));
         btnSaturday.setTextColor(context.getResources().getColor(R.color.background_blue));
-        updateProgressValues(Day.SATURDAY);
     }
 
     @OnClick(R.id.btn_sunday)
@@ -981,7 +917,6 @@ public class TemporaryProgressFragment extends BaseFragment {
         }
         lineSunday.setBackgroundColor(context.getResources().getColor(R.color.green_grapgh));
         btnSunday.setTextColor(context.getResources().getColor(R.color.background_blue));
-        updateProgressValues(Day.SUNDAY);
     }
 
 }

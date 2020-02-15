@@ -135,6 +135,7 @@
 
                             <com.github.lzyzsd.circleprogress.DonutProgress
                                 android:id="@+id/dp_steps"
+                                android:rotation="-90"
                                 android:layout_width="80dp"
                                 android:layout_height="80dp" />
 
@@ -173,6 +174,7 @@
 
                             <com.github.lzyzsd.circleprogress.DonutProgress
                                 android:id="@+id/dp_calories"
+                                android:rotation="-90"
                                 android:layout_width="80dp"
                                 android:layout_height="80dp" />
 
@@ -213,6 +215,7 @@
 
                             <com.github.lzyzsd.circleprogress.DonutProgress
                                 android:id="@+id/dp_fitness"
+                                android:rotation="-90"
                                 android:layout_width="80dp"
                                 android:layout_height="80dp" />
 

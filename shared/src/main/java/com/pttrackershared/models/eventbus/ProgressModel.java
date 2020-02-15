@@ -19,7 +19,7 @@ public class ProgressModel implements Serializable {
     private int monKm;
     @SerializedName("Mon Workout")
     private int monWorkout;
-    @SerializedName("Mon WorkoutCalories")
+    @SerializedName("Mon Workoutcalories")
     private int monWorkoutCalories;
     @SerializedName("Mon WorkoutName")
     private String monWorkoutName;
@@ -29,7 +29,7 @@ public class ProgressModel implements Serializable {
     private int tueKm;
     @SerializedName("Tue Workout")
     private int tueWorkout;
-    @SerializedName("Tue WorkoutCalories")
+    @SerializedName("Tue Workoutcalories")
     private int tueWorkoutCalories;
     @SerializedName("Tue WorkoutName")
     private String tueWorkoutName;
@@ -39,7 +39,7 @@ public class ProgressModel implements Serializable {
     private int wedKm;
     @SerializedName("Wed Workout")
     private int wedWorkout;
-    @SerializedName("Wed WorkoutCalories")
+    @SerializedName("Wed Workoutcalories")
     private int wedWorkoutCalories;
     @SerializedName("Wed WorkoutName")
     private String wedWorkoutName;
@@ -49,7 +49,7 @@ public class ProgressModel implements Serializable {
     private int thuKm;
     @SerializedName("Thu Workout")
     private int thuWorkout;
-    @SerializedName("Thu WorkoutCalories")
+    @SerializedName("Thu Workoutcalories")
     private int thuWorkoutCalories;
 
     public int getMonWorkoutCalories() {
@@ -116,7 +116,7 @@ public class ProgressModel implements Serializable {
     private int friKm;
     @SerializedName("Fri Workout")
     private int friWorkout;
-    @SerializedName("Fri WorkoutCalories")
+    @SerializedName("Fri Workoutcalories")
     private int friWorkoutCalories;
     @SerializedName("Fri WorkoutName")
     private String friWorkoutName;
@@ -126,7 +126,7 @@ public class ProgressModel implements Serializable {
     private int satKm;
     @SerializedName("Sat Workout")
     private int satWorkout;
-    @SerializedName("Sat WorkoutCalories")
+    @SerializedName("Sat Workoutcalories")
     private int satWorkoutCalories;
     @SerializedName("Sat WorkoutName")
     private String satWorkoutName;
@@ -136,7 +136,7 @@ public class ProgressModel implements Serializable {
     private int sunKm;
     @SerializedName("Sun Workout")
     private int sunWorkout;
-    @SerializedName("Sun WorkoutCalories")
+    @SerializedName("Sun Workoutcalories")
     private int sunWorkoutCalories;
     @SerializedName("Sun WorkoutName")
     private String sunWorkoutName;
